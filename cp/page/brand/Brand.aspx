@@ -18,7 +18,7 @@
         </div>
 
         <div class="table-responsive">
-            <table class="table">
+            <table class="table table-bordered">
                 <thead>
                     <tr>
                         <th>ID</th>
@@ -27,14 +27,19 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <%foreach (var item in list)
-                        {%>
+                    <%for (int i = list.Count - 1 ; i > -1; i-- )
+                   {%>
                     <tr>
-                        <td><%=item.ID %></td>
-                        <td><%=item.Name %></td>
+                        <td><%=list[i].ID %></td>
+                        <td><%=list[i].Name %></td>
                         <td>
-                            <button class="btn btn-success" onclick="OpenModal(<%=item.ID %>,this)">Edit</button>
-                            <button class="btn btn-danger" onclick="Delete(<%=item.ID %>,this)">Delete</button>
+                            <a class="btn btn-info" onclick="OpenModal(<%=list[i].ID %>,this)">
+                                <i class="fa fa-edit" style="font-size: 15px; right: 10px"></i>
+
+                            </a>
+                            <a class="btn" onclick="Delete(this,<%=list[i].ID %>)">
+                               <i class="fa fa-trash" style="font-size: 15px"></i>
+                            </a>
                         </td>
                     </tr>
                     <%} %>
@@ -48,7 +53,6 @@
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal">&times;</button>
                     <h4 class="modal-title">Brand</h4>
                 </div>
                 <div class="modal-body">
@@ -88,15 +92,15 @@
                 }, data => {
                     data = JSON.parse(data);
                     if (data.success == -1) {
-                        swal("Error occur. Please try again");
+                        alert("Error occur. Please try again");
                         console.log(data.error);
                     } else {
-                        swal("Insert success");
+                        alert("Insert success");
                         location.reload();
                     }
                 });
             } else {
-                swal("Please enter brand name");
+                alert("Please enter brand name");
             }
         }
 
@@ -110,47 +114,48 @@
                     data = JSON.parse(data);
 
                     if (data.success == -1) {
-                        swal("Error occur. Please try again");
+                        alert("Error occur. Please try again");
                         console.log(data.error);
                     } else {
-                        swal("Edit success");
+                        alert("Edit success");
                         location.reload();
                     }
                 })
             } else {
-                swal("Please enter brand name");
+                alert("Please enter brand name");
             }
 
         }
-        function Delete(id, input) {
-            swal({
-                title: 'Are you sure?',
-                text: "You won't be able to revert this!",
-                type: 'warning',
-                showCancelButton: true,
-                confirmButtonColor: '#3085d6',
-                cancelButtonColor: '#d33',
-                confirmButtonText: 'Yes, delete it!'
-            }).then(result => {
-                if (result.value) {
-                    $(input).attr("disabled", "disabled");
-                    $(input).text("Deleting");
-                    $.post("/cp/do/brand/delete.ashx", {
-                        id: id
-                    }, data => {
+        function Delete(input,id) {
+            alertify.confirm("Are you sure Delete", function () {
+                $(input).prop("disabled", true);
+                ShowLoading();
+                $.ajax({
+                    url: "/cp/do/brand/delete.aspx",
+                    method: "post",
+                    data: {
+                        id: id,
+                    },
+                    success: function (data) {
                         data = JSON.parse(data);
                         if (data.success == -1) {
-                            swal("Error occur. Please try again");
-                            console.log(data.error);
-                            $(input).removeAttr("disabled");
-                            $(input).text("Delete");
-                        } else {
-                            swal("Delete success");
-                            location.reload();
+                            alertify.error("Error. Please try again");
+                            console.log(data);
                         }
-                    })
-                }
-            })
+                        else {
+                            location.href = "/cp-brand";
+                        }
+                        $(input).prop("disabled", false);
+                        HideLoading();
+                    },
+                    error: function (error) {
+                        alertify.error("Error. Please try again.");
+                        console.log(error);
+                        $(input).prop("disabled", false);
+                        HideLoading();
+                    }
+                })
+            });
         }
     </script>
 </asp:Content>
