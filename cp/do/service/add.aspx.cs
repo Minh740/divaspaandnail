@@ -15,6 +15,7 @@ public partial class cp_do_service_add : System.Web.UI.Page
             ServicesManager SM = new ServicesManager();
             ServicesTBx service = new ServicesTBx();
             service.Name = Request["name"];
+            service.Order = Convert.ToInt32(Request["order"]);
             service.CategoryID = Convert.ToInt32(Request["categoryID"]);
             service.Description = Request["description"];
             service.Price = Request["price"];

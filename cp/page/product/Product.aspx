@@ -20,20 +20,19 @@
                 <th class="text-center" width="200px">Avatar</th>
                 <th colspan="2" class="text-center">Action</th>
             </tr>
-            <%foreach (var product in listProduct)
-                {
-            %>
+            <%for (int i = listProduct.Count - 1 ; i > -1; i-- )
+                   {%>
             <tr>
-                <td><%=product.ID%></td>
-                <td><%=product.Name%></td>
+                <td><%=listProduct[i].ID%></td>
+                <td><%=listProduct[i].Name%></td>
                 <td>
-                    <img src="/upload/product/product_<%=product.ID%>.jpg" width="100%" />
+                    <img src="/upload/product/product_<%=listProduct[i].ID%>.jpg" width="100%" />
                 </td>
                 <td class="text-center">
-                    <a class="btn btn-info" href="cp-edit-product-<%=product.ID %>">
+                    <a class="btn btn-info" href="cp-edit-product-<%=listProduct[i].ID %>">
                         <i class="fa fa-edit" style="font-size: 15px"></i>
                     </a>
-                    <button class="btn" onclick="Delete(this,<%=product.ID%>)">
+                    <button class="btn" onclick="Delete(this,<%=listProduct[i].ID%>)">
                         <i class="fa fa-trash" style="font-size: 15px"></i>
                     </button>
                 </td>

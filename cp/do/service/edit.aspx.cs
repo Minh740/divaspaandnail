@@ -15,9 +15,12 @@ public partial class cp_do_service_edit : System.Web.UI.Page
             ServicesManager SM = new ServicesManager();
             int ID = Convert.ToInt32(Request["ID"]);
             ServicesTBx service = SM.GetByID(ID);
+
+            int order = Convert.ToInt32(Request["order"]);
             service.Name = Request["name"];
             service.CategoryID = Convert.ToInt32(Request["categoryID"]);
             service.Description = Request["description"];
+            service.Order = order;
             service.Price = Request["price"];
             SM.Save();
             Response.Write(JsonConvert.SerializeObject(new

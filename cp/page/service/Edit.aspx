@@ -39,6 +39,10 @@
         <label>Description</label>
         <textarea class="form-control tinymce" id="txtDescription"><%=service.Description %></textarea>
     </div>
+    <div class="col-md-6 form-group">
+        <label>Order</label>
+        <input type="text" id="txtOrder" class="form-control" value="<%=service.Order%>" />
+    </div>
     <div class="form-group">
         <a class="btn btn-danger" href="/cp-category">Cancel</a>
         <button id="disable" class="btn btn-info" onclick="Submit(<%=service.ID%>,this)">Submit</button>
@@ -49,6 +53,8 @@
             ShowLoading();
             $(input).prop("disabled", true);
             $(input).text("Submitting");
+
+            var order= $("#txtOrder").val();
             var name = $("#txtName").val();
             var categoryID = $("#txtCategory").val();
             var price = $("#txtPrice").val();
@@ -57,6 +63,7 @@
                 url: "/cp/do/service/edit.aspx",
                 method: "post",
                 data: {
+                    order:order,
                     name: name,
                     categoryID: categoryID,
                     price: price,
