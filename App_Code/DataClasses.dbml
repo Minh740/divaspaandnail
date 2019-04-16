@@ -208,17 +208,6 @@
       <Association Name="UsersTbx_RewardDBx" Member="UsersTbx" ThisKey="UserId" OtherKey="UserId" Type="UsersTbx" IsForeignKey="true" />
     </Type>
   </Table>
-  <Table Name="dbo.ServicesTBx" Member="ServicesTBxes">
-    <Type Name="ServicesTBx">
-      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="Name" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
-      <Column Name="Description" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="Price" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="CategoryID" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="Status" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Association Name="CategoryTBx_ServicesTBx" Member="CategoryTBx" ThisKey="CategoryID" OtherKey="ID" Type="CategoryTBx" IsForeignKey="true" />
-    </Type>
-  </Table>
   <Table Name="dbo.SliderTBx" Member="SliderTBxes">
     <Type Name="SliderTBx">
       <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
@@ -292,6 +281,18 @@
       <Column Name="UserId" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="RedeemDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
       <Association Name="UsersTbx_VouchersTBx" Member="UsersTbx" ThisKey="UserId" OtherKey="UserId" Type="UsersTbx" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ServicesTBx" Member="ServicesTBxes">
+    <Type Name="ServicesTBx">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="Description" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="Price" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="CategoryID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Status" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="[Order]" Member="Order" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="CategoryTBx_ServicesTBx" Member="CategoryTBx" ThisKey="CategoryID" OtherKey="ID" Type="CategoryTBx" IsForeignKey="true" />
     </Type>
   </Table>
 </Database>

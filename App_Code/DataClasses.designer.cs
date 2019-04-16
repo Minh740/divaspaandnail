@@ -89,9 +89,6 @@ public partial class DataClassesDataContext : System.Data.Linq.DataContext
   partial void InsertRewardDBx(RewardDBx instance);
   partial void UpdateRewardDBx(RewardDBx instance);
   partial void DeleteRewardDBx(RewardDBx instance);
-  partial void InsertServicesTBx(ServicesTBx instance);
-  partial void UpdateServicesTBx(ServicesTBx instance);
-  partial void DeleteServicesTBx(ServicesTBx instance);
   partial void InsertSliderTBx(SliderTBx instance);
   partial void UpdateSliderTBx(SliderTBx instance);
   partial void DeleteSliderTBx(SliderTBx instance);
@@ -107,6 +104,9 @@ public partial class DataClassesDataContext : System.Data.Linq.DataContext
   partial void InsertVouchersTBx(VouchersTBx instance);
   partial void UpdateVouchersTBx(VouchersTBx instance);
   partial void DeleteVouchersTBx(VouchersTBx instance);
+  partial void InsertServicesTBx(ServicesTBx instance);
+  partial void UpdateServicesTBx(ServicesTBx instance);
+  partial void DeleteServicesTBx(ServicesTBx instance);
   #endregion
 	
 	public DataClassesDataContext(string connection) : 
@@ -126,20 +126,21 @@ public partial class DataClassesDataContext : System.Data.Linq.DataContext
 	{
 		OnCreated();
 	}
-	
-	public DataClassesDataContext(System.Data.IDbConnection connection, System.Data.Linq.Mapping.MappingSource mappingSource) : 
-			base(connection, mappingSource)
-	{
-		OnCreated();
-	}
+
+
     public DataClassesDataContext() :
         base(global::System.Configuration.ConfigurationManager.ConnectionStrings["DivaSpa1DBxConnectionString"].ConnectionString, mappingSource)
     {
         OnCreated();
     }
 
-
-    public System.Data.Linq.Table<UserCheckInTBx> UserCheckInTBxes
+    public DataClassesDataContext(System.Data.IDbConnection connection, System.Data.Linq.Mapping.MappingSource mappingSource) : 
+			base(connection, mappingSource)
+	{
+		OnCreated();
+	}
+	
+	public System.Data.Linq.Table<UserCheckInTBx> UserCheckInTBxes
 	{
 		get
 		{
@@ -299,14 +300,6 @@ public partial class DataClassesDataContext : System.Data.Linq.DataContext
 		}
 	}
 	
-	public System.Data.Linq.Table<ServicesTBx> ServicesTBxes
-	{
-		get
-		{
-			return this.GetTable<ServicesTBx>();
-		}
-	}
-	
 	public System.Data.Linq.Table<SliderTBx> SliderTBxes
 	{
 		get
@@ -344,6 +337,14 @@ public partial class DataClassesDataContext : System.Data.Linq.DataContext
 		get
 		{
 			return this.GetTable<VouchersTBx>();
+		}
+	}
+	
+	public System.Data.Linq.Table<ServicesTBx> ServicesTBxes
+	{
+		get
+		{
+			return this.GetTable<ServicesTBx>();
 		}
 	}
 }
@@ -4284,229 +4285,6 @@ public partial class RewardDBx : INotifyPropertyChanging, INotifyPropertyChanged
 	}
 }
 
-[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.ServicesTBx")]
-public partial class ServicesTBx : INotifyPropertyChanging, INotifyPropertyChanged
-{
-	
-	private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-	
-	private int _ID;
-	
-	private string _Name;
-	
-	private string _Description;
-	
-	private string _Price;
-	
-	private System.Nullable<int> _CategoryID;
-	
-	private System.Nullable<int> _Status;
-	
-	private EntityRef<CategoryTBx> _CategoryTBx;
-	
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnIDChanging(int value);
-    partial void OnIDChanged();
-    partial void OnNameChanging(string value);
-    partial void OnNameChanged();
-    partial void OnDescriptionChanging(string value);
-    partial void OnDescriptionChanged();
-    partial void OnPriceChanging(string value);
-    partial void OnPriceChanged();
-    partial void OnCategoryIDChanging(System.Nullable<int> value);
-    partial void OnCategoryIDChanged();
-    partial void OnStatusChanging(System.Nullable<int> value);
-    partial void OnStatusChanged();
-    #endregion
-	
-	public ServicesTBx()
-	{
-		this._CategoryTBx = default(EntityRef<CategoryTBx>);
-		OnCreated();
-	}
-	
-	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-	public int ID
-	{
-		get
-		{
-			return this._ID;
-		}
-		set
-		{
-			if ((this._ID != value))
-			{
-				this.OnIDChanging(value);
-				this.SendPropertyChanging();
-				this._ID = value;
-				this.SendPropertyChanged("ID");
-				this.OnIDChanged();
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Name", DbType="NVarChar(200)")]
-	public string Name
-	{
-		get
-		{
-			return this._Name;
-		}
-		set
-		{
-			if ((this._Name != value))
-			{
-				this.OnNameChanging(value);
-				this.SendPropertyChanging();
-				this._Name = value;
-				this.SendPropertyChanged("Name");
-				this.OnNameChanged();
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Description", DbType="NVarChar(MAX)")]
-	public string Description
-	{
-		get
-		{
-			return this._Description;
-		}
-		set
-		{
-			if ((this._Description != value))
-			{
-				this.OnDescriptionChanging(value);
-				this.SendPropertyChanging();
-				this._Description = value;
-				this.SendPropertyChanged("Description");
-				this.OnDescriptionChanged();
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Price", DbType="NVarChar(50)")]
-	public string Price
-	{
-		get
-		{
-			return this._Price;
-		}
-		set
-		{
-			if ((this._Price != value))
-			{
-				this.OnPriceChanging(value);
-				this.SendPropertyChanging();
-				this._Price = value;
-				this.SendPropertyChanged("Price");
-				this.OnPriceChanged();
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CategoryID", DbType="Int")]
-	public System.Nullable<int> CategoryID
-	{
-		get
-		{
-			return this._CategoryID;
-		}
-		set
-		{
-			if ((this._CategoryID != value))
-			{
-				if (this._CategoryTBx.HasLoadedOrAssignedValue)
-				{
-					throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-				}
-				this.OnCategoryIDChanging(value);
-				this.SendPropertyChanging();
-				this._CategoryID = value;
-				this.SendPropertyChanged("CategoryID");
-				this.OnCategoryIDChanged();
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Status", DbType="Int")]
-	public System.Nullable<int> Status
-	{
-		get
-		{
-			return this._Status;
-		}
-		set
-		{
-			if ((this._Status != value))
-			{
-				this.OnStatusChanging(value);
-				this.SendPropertyChanging();
-				this._Status = value;
-				this.SendPropertyChanged("Status");
-				this.OnStatusChanged();
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.AssociationAttribute(Name="CategoryTBx_ServicesTBx", Storage="_CategoryTBx", ThisKey="CategoryID", OtherKey="ID", IsForeignKey=true)]
-	public CategoryTBx CategoryTBx
-	{
-		get
-		{
-			return this._CategoryTBx.Entity;
-		}
-		set
-		{
-			CategoryTBx previousValue = this._CategoryTBx.Entity;
-			if (((previousValue != value) 
-						|| (this._CategoryTBx.HasLoadedOrAssignedValue == false)))
-			{
-				this.SendPropertyChanging();
-				if ((previousValue != null))
-				{
-					this._CategoryTBx.Entity = null;
-					previousValue.ServicesTBxes.Remove(this);
-				}
-				this._CategoryTBx.Entity = value;
-				if ((value != null))
-				{
-					value.ServicesTBxes.Add(this);
-					this._CategoryID = value.ID;
-				}
-				else
-				{
-					this._CategoryID = default(Nullable<int>);
-				}
-				this.SendPropertyChanged("CategoryTBx");
-			}
-		}
-	}
-	
-	public event PropertyChangingEventHandler PropertyChanging;
-	
-	public event PropertyChangedEventHandler PropertyChanged;
-	
-	protected virtual void SendPropertyChanging()
-	{
-		if ((this.PropertyChanging != null))
-		{
-			this.PropertyChanging(this, emptyChangingEventArgs);
-		}
-	}
-	
-	protected virtual void SendPropertyChanged(String propertyName)
-	{
-		if ((this.PropertyChanged != null))
-		{
-			this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-		}
-	}
-}
-
 [global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.SliderTBx")]
 public partial class SliderTBx : INotifyPropertyChanging, INotifyPropertyChanged
 {
@@ -6042,6 +5820,253 @@ public partial class VouchersTBx : INotifyPropertyChanging, INotifyPropertyChang
 					this._UserId = default(Nullable<int>);
 				}
 				this.SendPropertyChanged("UsersTbx");
+			}
+		}
+	}
+	
+	public event PropertyChangingEventHandler PropertyChanging;
+	
+	public event PropertyChangedEventHandler PropertyChanged;
+	
+	protected virtual void SendPropertyChanging()
+	{
+		if ((this.PropertyChanging != null))
+		{
+			this.PropertyChanging(this, emptyChangingEventArgs);
+		}
+	}
+	
+	protected virtual void SendPropertyChanged(String propertyName)
+	{
+		if ((this.PropertyChanged != null))
+		{
+			this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+		}
+	}
+}
+
+[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.ServicesTBx")]
+public partial class ServicesTBx : INotifyPropertyChanging, INotifyPropertyChanged
+{
+	
+	private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+	
+	private int _ID;
+	
+	private string _Name;
+	
+	private string _Description;
+	
+	private string _Price;
+	
+	private System.Nullable<int> _CategoryID;
+	
+	private System.Nullable<int> _Status;
+	
+	private System.Nullable<int> _Order;
+	
+	private EntityRef<CategoryTBx> _CategoryTBx;
+	
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnIDChanging(int value);
+    partial void OnIDChanged();
+    partial void OnNameChanging(string value);
+    partial void OnNameChanged();
+    partial void OnDescriptionChanging(string value);
+    partial void OnDescriptionChanged();
+    partial void OnPriceChanging(string value);
+    partial void OnPriceChanged();
+    partial void OnCategoryIDChanging(System.Nullable<int> value);
+    partial void OnCategoryIDChanged();
+    partial void OnStatusChanging(System.Nullable<int> value);
+    partial void OnStatusChanged();
+    partial void OnOrderChanging(System.Nullable<int> value);
+    partial void OnOrderChanged();
+    #endregion
+	
+	public ServicesTBx()
+	{
+		this._CategoryTBx = default(EntityRef<CategoryTBx>);
+		OnCreated();
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+	public int ID
+	{
+		get
+		{
+			return this._ID;
+		}
+		set
+		{
+			if ((this._ID != value))
+			{
+				this.OnIDChanging(value);
+				this.SendPropertyChanging();
+				this._ID = value;
+				this.SendPropertyChanged("ID");
+				this.OnIDChanged();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Name", DbType="NVarChar(200)")]
+	public string Name
+	{
+		get
+		{
+			return this._Name;
+		}
+		set
+		{
+			if ((this._Name != value))
+			{
+				this.OnNameChanging(value);
+				this.SendPropertyChanging();
+				this._Name = value;
+				this.SendPropertyChanged("Name");
+				this.OnNameChanged();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Description", DbType="NVarChar(MAX)")]
+	public string Description
+	{
+		get
+		{
+			return this._Description;
+		}
+		set
+		{
+			if ((this._Description != value))
+			{
+				this.OnDescriptionChanging(value);
+				this.SendPropertyChanging();
+				this._Description = value;
+				this.SendPropertyChanged("Description");
+				this.OnDescriptionChanged();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Price", DbType="NVarChar(50)")]
+	public string Price
+	{
+		get
+		{
+			return this._Price;
+		}
+		set
+		{
+			if ((this._Price != value))
+			{
+				this.OnPriceChanging(value);
+				this.SendPropertyChanging();
+				this._Price = value;
+				this.SendPropertyChanged("Price");
+				this.OnPriceChanged();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CategoryID", DbType="Int")]
+	public System.Nullable<int> CategoryID
+	{
+		get
+		{
+			return this._CategoryID;
+		}
+		set
+		{
+			if ((this._CategoryID != value))
+			{
+				if (this._CategoryTBx.HasLoadedOrAssignedValue)
+				{
+					throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+				}
+				this.OnCategoryIDChanging(value);
+				this.SendPropertyChanging();
+				this._CategoryID = value;
+				this.SendPropertyChanged("CategoryID");
+				this.OnCategoryIDChanged();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Status", DbType="Int")]
+	public System.Nullable<int> Status
+	{
+		get
+		{
+			return this._Status;
+		}
+		set
+		{
+			if ((this._Status != value))
+			{
+				this.OnStatusChanging(value);
+				this.SendPropertyChanging();
+				this._Status = value;
+				this.SendPropertyChanged("Status");
+				this.OnStatusChanged();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[Order]", Storage="_Order", DbType="Int")]
+	public System.Nullable<int> Order
+	{
+		get
+		{
+			return this._Order;
+		}
+		set
+		{
+			if ((this._Order != value))
+			{
+				this.OnOrderChanging(value);
+				this.SendPropertyChanging();
+				this._Order = value;
+				this.SendPropertyChanged("Order");
+				this.OnOrderChanged();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.AssociationAttribute(Name="CategoryTBx_ServicesTBx", Storage="_CategoryTBx", ThisKey="CategoryID", OtherKey="ID", IsForeignKey=true)]
+	public CategoryTBx CategoryTBx
+	{
+		get
+		{
+			return this._CategoryTBx.Entity;
+		}
+		set
+		{
+			CategoryTBx previousValue = this._CategoryTBx.Entity;
+			if (((previousValue != value) 
+						|| (this._CategoryTBx.HasLoadedOrAssignedValue == false)))
+			{
+				this.SendPropertyChanging();
+				if ((previousValue != null))
+				{
+					this._CategoryTBx.Entity = null;
+					previousValue.ServicesTBxes.Remove(this);
+				}
+				this._CategoryTBx.Entity = value;
+				if ((value != null))
+				{
+					value.ServicesTBxes.Add(this);
+					this._CategoryID = value.ID;
+				}
+				else
+				{
+					this._CategoryID = default(Nullable<int>);
+				}
+				this.SendPropertyChanged("CategoryTBx");
 			}
 		}
 	}

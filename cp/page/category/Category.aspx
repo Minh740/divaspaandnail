@@ -22,17 +22,16 @@
                 
                 <th colspan="2" class="text-center">Action</th>
             </tr>
-            <%foreach (var category in listCategory)
-                {
-            %>
+            <%for (int i = listCategory.Count - 1 ; i > -1; i-- )
+                   {%>
             <tr>
 
-                <td><%=category.ID%></td>
-                <td><%=category.Name%></td>
-                  <td><%=category.Order%></td>
-                <%if (category.ParentID != null)
+                <td><%=listCategory[i].ID%></td>
+                <td><%=listCategory[i].Name%></td>
+                  <td><%=listCategory[i].Order%></td>
+                <%if (listCategory[i].ParentID != null)
                     { %>
-                <td><%=category.CategoryTBx1.Name%></td>
+                <td><%=listCategory[i].CategoryTBx1.Name%></td>
                 <%}
                     else
                     { %>
@@ -40,10 +39,10 @@
               
                 <%} %>
                 <td class="text-center">
-                    <a class="btn btn-info" href="/cp-edit-category-<%=category.ID %>">
+                    <a class="btn btn-info" href="/cp-edit-category-<%=listCategory[i].ID %>">
                         <i class="fa fa-edit" style="font-size: 15px; right: 10px"></i>
                     </a>
-                    <button class="btn" onclick="Delete(this,<%=category.ID%>)">
+                    <button class="btn" onclick="Delete(this,<%=listCategory[i].ID%>)">
                         <i class="fa fa-trash" style="font-size: 15px"></i>
                     </button>
                 </td>
