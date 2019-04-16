@@ -17,26 +17,6 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
     <!-- Page header -->
-<%--    <div class="page-header">
-        <div class="page-header-content">
-            <div class="page-title">
-                <h4><i class="icon-arrow-left52 position-left"></i><span class="text-semibold">User</span> Management</h4>
-            </div>
-
-            <div class="heading-elements">
-                <button id="btn-add" onclick="OpenModal(0)" class="btn  btn-labeled-right bg-blue ">Add New </button>
-            </div>
-        </div>
-
-        <div class="breadcrumb-line">
-            <ul class="breadcrumb">
-                <li><a href="/"><i class="icon-home2 position-left"></i>Home</a></li>
-                <li><a href="/cp/User.aspx"><i class="icon-user position-left"></i>User Management</a></li>
-            </ul>
-
-
-        </div>
-    </div>--%>
      <!-- Breadcrumbs-->
     <ol class="breadcrumb">
         <li class="breadcrumb-item">
@@ -44,7 +24,9 @@
         </li>
         <li class="breadcrumb-item active">User</li>
     </ol>
-
+    <div class="heading-elements">
+        <a id="btn-add" class="btn btn-success" onclick="OpenModal(0)" class="btn  btn-labeled-right bg-blue ">Add New </a>
+    </div>
     <p></p>
     <div class="panel panel-flat">
         <div class="panel-heading">
@@ -53,12 +35,13 @@
             </div>
 
             <h7 class="panel-title" style="width: 150px"><span class="fa fa-user-alt"></span>Users (<%=list.Count %>)</h7>
+            <p></p>
             <div class="heading-elements">
             </div>
         </div>
 
-        <div class="table" id="tblUsers" style="height: 55vh; overflow: scroll">
-            <table class="table">
+        <div class="table" id="tblUsers">
+            <table class="table table-bordered">
                 <thead>
                     <tr>
                         <th>ID</th>
@@ -89,10 +72,10 @@
                         <td><%=level[Convert.ToInt32(i.UserLevel)] %></td>
                         <td>
                             <div class="action-box">
-                                <button  onclick="OpenModal(<%=i.UserId%>)">
+                                <a class="btn btn-info" onclick="OpenModal(<%=i.UserId%>)">
                                    <i class="fas fa-edit"></i>
-                                </button>
-                                <button  onclick="Delete(<%=i.UserId%>,this)"><i class="fas fa-trash"></i></button>
+                                </a>
+                                <a class="btn"  onclick="Delete(<%=i.UserId%>,this)"><i class="fas fa-trash"></i></a>
                                 <button  onclick="OpenRedeem(<%=i.UserId %>)"><i class="fas fa-gift"></i></button>
                             </div>
                         </td>
@@ -107,7 +90,6 @@
         <div class="modal-dialog modal-lg">
             <div class="modal-content">
                 <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal">&times;</button>
                     <h4 class="modal-title" id="m-title">User</h4>
                 </div>
                 <div class="row modal-body">

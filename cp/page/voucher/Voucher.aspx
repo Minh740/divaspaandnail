@@ -461,7 +461,7 @@
             }
             else {
                 console.log(text);
-                $.getJSON("/api/search-user.aspx", {
+                $.getJSON("/cp/api/search-user.aspx", {
                     searchStr: text,
                 }, function (data) {
                     var userName = data.FirstName + " " + data.LastName;
