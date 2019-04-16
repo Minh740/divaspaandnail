@@ -13,26 +13,21 @@
   <!-- Custom fonts for this template-->
   <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
   <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css">
 
   <!-- Custom styles for this template-->
   <link href="/css/sb-admin-2.min.css" rel="stylesheet">
        <script src="/js/jquery-3.2.1.js"></script>
+
+
 	 <!-- Bootstrap core JavaScript-->
     <script src="/cp/plugin/tinymce/tinymce.min.js"></script>
     <script src="/cp/alertify/alertify.js"></script>
     <script src="/cp/alertify/alertify.min.js"></script>
     <link href="/cp/alertify/css/alertify.min.css" rel="stylesheet" />
     <link href="/cp/alertify/css/themes/default.min.css" rel="stylesheet" />
-     <link href="/cp/assets/css/icons/icomoon/styles.css" rel="stylesheet" type="text/css" />
-<%--    <link href="/cp/assets/css/minified/core.min.css" rel="stylesheet" type="text/css" />--%> <%--css phan reward--%>
-    <link href="/cp/assets/css/minified/components.min.css" rel="stylesheet" type="text/css" />
-    <link href="/cp/assets/css/minified/colors.min.css" rel="stylesheet" type="text/css" />
 
-     <script src="/cp/lib/datepicker/js/moment.js"></script>
-    <script src="/cp/lib/datepicker/js/bootstrap-datetimepicker.js"></script>
-    <link href="/cp/lib/datepicker/css/bootstrap-datetimepicker.css" rel="stylesheet" />
-    <link href="/cp/lib/datepicker/css/bootstrap-datetimepicker-standalone.css" rel="stylesheet" />
+
+    
 
     <script src="/cp/js/effect.js"></script>
     <link href="/cp/alertify/css/alertify.css" rel="stylesheet" />
@@ -140,7 +135,7 @@
             <li class="nav-item <%if (name.Contains("service"))
                 {%>active<%}%>">
                 <a class="nav-link" href="/cp-service">
-                    <i class="fas fa-fw fa-chart-area"></i>
+                   <i class="fas fa-bezier-curve"></i>
                     <span>Services</span>
                 </a>
             </li>
@@ -148,7 +143,7 @@
             <li class="nav-item <%if (name.Contains("slider"))
                 {%>active<%}%>">
                 <a class="nav-link" href="/cp-slider">
-                    <i class="fas fa-fw fa-chart-area"></i>
+                    <i class="fa fa-sliders-h"></i>
                     <span>Slider</span>
                 </a>
             </li>
@@ -177,7 +172,7 @@
             <li class="nav-item <%if (name.Contains("product"))
                 {%>active<%}%>">
                 <a class="nav-link" href="/cp-product">
-                    <i class="fas fa-image"></i>
+                   <i class="fas fa-apple-alt"></i>
                     <span>Product</span></a>
             </li>
         
@@ -189,7 +184,11 @@
                 </a>
             </li>
 
-           <%-- <li class="nav-item <%if (name.Contains("meta"))new
+
+           
+
+           <%-- <li class="nav-item <%if (name.Contains("meta"))
+
                 {%>active<%}%>">
                 <a class="nav-link" href="/cp/page/meta/Meta.aspx">
                     <i class="fas fa-fw fa-chart-area"></i>
@@ -206,7 +205,7 @@
             <li class="nav-item <%if (name.Contains("image-category"))
                 {%>active<%}%>">
                 <a class="nav-link" href="/cp-image-category">
-                    <i class="far fa-edit"></i>
+                    <i class="fas fa-image"></i>
                     <span>Image Category</span></a>
             </li>
            <%-- <li class="nav-item <%if (name.Contains("image"))
@@ -218,16 +217,49 @@
             <li class="nav-item <%if (name.Contains("user"))
                 {%>active<%}%>">
                 <a class="nav-link" href="/cp/page/user/User.aspx">
-                    <i class="far fa-edit"></i>
+                    <i class="far fa-user   "></i>
                     <span>User</span></a>
             </li>
-            <li class="nav-item <%if (name.Contains("reward"))
-                    {%>active<%}%>">
-                    <a class="nav-link" href="/cp-reward">
-                        <i class="far fa-edit"></i>
-                        <span>Reward</span></a>
-                </li>
 
+            <li class="nav-item <%if (name.Contains("booking"))
+                    {%>active<%}%>">
+                    <a class="nav-link" href="/cp/page/appointment/booking.aspx">
+                        <i class="fa fa-phone"></i>
+                        <span>Appointment</span></a>
+             </li>
+
+               <li class="nav-item <%if (name.Contains("color"))
+                    {%>active<%}%>">
+                    <a class="nav-link" href="/cp/page/color/Color.aspx">
+                        <i class="fas fa-palette"></i>
+                        <span>Color</span></a>
+             </li>
+
+        <li class="nav-item <%if (name.Contains("brand"))
+                    {%>active<%}%>">
+                    <a class="nav-link" href="/cp/page/brand/Brand.aspx">
+                        <i class="fab fa-elementor"></i>
+                        <span>Brand</span></a>
+             </li>
+        <li class="nav-item <%if (name.Contains("voucher"))
+                    {%>active<%}%>">
+                    <a class="nav-link" href="/cp/page/voucher/Voucher.aspx">
+                        <i class="far fa-folder-open"></i>
+                        <span>Voucher</span></a>
+             </li>
+          <li class="nav-item <%if (name.Contains("checkin"))
+                    {%>active<%}%>">
+                    <a class="nav-link" href="/cp/page/checkin/CheckIn.aspx">
+                        <i class="fas fa-pen"></i>
+                        <span>CheckIn</span></a>
+             </li>
+
+         <li class="nav-item <%if (name.Contains("giftcard"))
+                {%>active<%}%>">
+                <a class="nav-link" href="/cp/page/giftcard/Giftcard.aspx">
+                   <i class="fas fa-gift"></i>
+                    <span>Gift Card</span></a>
+            </li>
       <!-- Divider -->
       <hr class="sidebar-divider">
 

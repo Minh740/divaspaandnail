@@ -71,6 +71,12 @@
 
         // reward
         rout.MapPageRoute("", "cp-reward", "~/cp/page/reward/Reward.aspx");
+
+        // brand
+        rout.MapPageRoute("", "cp-brand", "~/cp/page/brand/Brand.aspx");
+
+        // voucher
+        rout.MapPageRoute("", "cp-voucher", "~/cp/page/voucher/Voucher.aspx");
     }
 
     void Application_Start(object sender, EventArgs e)
