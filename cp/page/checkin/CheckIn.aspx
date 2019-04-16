@@ -21,7 +21,7 @@
             <div class="col-md-6 col-md-offset-3">
             </div>
 
-            <h5 class="panel-title" style="width: 150px"><span class="icon-user"></span>Users (<%=list.Count %>)</h5>
+            <h7 class="panel-title" style="width: 150px"><span class="icon-user"></span>Users (<%=list.Count %>)</h7>
             <div class="heading-elements">
             </div>
         </div>
