@@ -3,7 +3,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
-     <div class="page-header">
+<%--     <div class="page-header">
         <div class="page-header-content">
             <div class="page-title">
                 <h4><i class="icon-arrow-left52 position-left"></i><span class="text-semibold">Appointment</span> Management</h4>
@@ -16,8 +16,13 @@
                 <li><a href="#"><i class="icon-blog position-left"> </i>Color Management</a></li>
             </ul>
         </div>
-    </div>
-
+    </div>--%>
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item">
+            <a href="#">Dashboard</a>
+        </li>
+        <li class="breadcrumb-item active">Appointment</li>
+    </ol>
     <div class="panel panel-flat">
         <div class="panel-heading">
             <h5 class="panel-title">Appointment (<%=list.Count %>)</h5>

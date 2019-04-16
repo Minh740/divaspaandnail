@@ -1,11 +1,9 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/cp/MasterPage.master" AutoEventWireup="true" CodeFile="Color.aspx.cs" Inherits="cp_page_color_Color" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
-    <script src="lib/color-picker/jquery.minicolors.js"></script>
-    <link href="lib/color-picker/jquery.minicolors.css" rel="stylesheet" />
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
-    <div class="page-header">
+<%--    <div class="page-header">
         <div class="page-header-content">
             <div class="page-title">
                 <h4><i class="icon-arrow-left52 position-left"></i><span class="text-semibold">Slider</span> Management</h4>
@@ -24,8 +22,15 @@
 
 
         </div>
-    </div>
-
+    </div>--%>
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item">
+            <a href="#">Dashboard</a>
+        </li>
+        <li class="breadcrumb-item active">Color</li>
+    </ol>
+        <a class="btn btn-success" id="btn-add" onclick="OpenModal(0,this)">Add New Color <i class="icon-menu7"></i></a>
+    <p></p>
     <div class="panel panel-flat">
         <div class="panel-heading">
             <h5 class="panel-title">Slider (<%=list.Count %>)</h5>
