@@ -1,6 +1,8 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/cp/MasterPage.master" AutoEventWireup="true" CodeFile="Color.aspx.cs" Inherits="cp_page_color_Color" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
+     <script src="/cp/lib/color-picker/jquery.minicolors.js"></script>
+    <link href="/cp/lib/color-picker/jquery.minicolors.css" rel="stylesheet" />
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
 <%--    <div class="page-header">
@@ -29,7 +31,7 @@
         </li>
         <li class="breadcrumb-item active">Color</li>
     </ol>
-        <a class="btn btn-success" id="btn-add" onclick="OpenModal(0,this)">Add New Color <i class="icon-menu7"></i></a>
+        <a class="btn btn-success" id="btn-add" onclick="OpenModal(0,this)">Add New Color</a>
     <p></p>
     <div class="panel panel-flat">
         <div class="panel-heading">
@@ -73,7 +75,7 @@
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <%--<button type="button" class="close" data-dismiss="modal">&times;</button>--%>
                     <h4 class="modal-title">Brand</h4>
                 </div>
                 <div class="modal-body">
@@ -138,7 +140,7 @@
                 }, data => {
                     data = JSON.parse(data);
                     if (data.success == -1) {
-                        swal("Error occur. Please try again");
+                        alert("Error occur. Please try again");
                         console.log(data.error);
                     } else {
                         swal("Insert success");
@@ -173,35 +175,40 @@
             }
 
         }
-        function Delete(id, input) {
-            swal({
-                title: 'Are you sure?',
-                text: "You won't be able to revert this!",
-                type: 'warning',
-                showCancelButton: true,
-                confirmButtonColor: '#3085d6',
-                cancelButtonColor: '#d33',
-                confirmButtonText: 'Yes, delete it!'
-            }).then(result => {
-                if (result.value) {
-                    $(input).attr("disabled", "disabled");
-                    $(input).text("Deleting");
-                    $.post("/cp/do/color/delete.ashx", {
-                        id: id
-                    }, data => {
+        function Delete(input, id) {
+            $(input).prop("disabled", true);
+            $(input).text("Deleting");
+            ShowLoading();
+            alertify.confirm("Are you sure Delete", function () {
+                $.ajax({
+                    url: "/cp/do/color/delete.ashx",
+                    method: "post",
+                    data: {
+                        id: id,
+                    },
+                    success: function (data) {
                         data = JSON.parse(data);
                         if (data.success == -1) {
-                            swal("Error occur. Please try again");
+                            alertify.error("Error. Please try again");
                             console.log(data.error);
-                            $(input).removeAttr("disabled");
-                            $(input).text("Delete");
+
                         } else {
-                            swal("Delete success");
                             location.reload();
                         }
-                    })
-                }
-            })
+                        $(input).prop("disabled", false);
+                        $(input).text("Delete");
+                        HideLoading();
+                    },
+                    error: function (error) {
+                        alertify.error("Error. Please try again");
+                        console.log(error);
+                        $(input).prop("disabled", false);
+                        $(input).text("Delete");
+                        HideLoading();
+                    }
+                })
+
+            });
         }
 
         $(function () {
