@@ -229,6 +229,12 @@
                         <i class="fab fa-elementor"></i>
                         <span>Brand</span></a>
              </li>
+        <li class="nav-item <%if (name.Contains("voucher"))
+                    {%>active<%}%>">
+                    <a class="nav-link" href="/cp/page/voucher/Voucher.aspx">
+                        <i class="far fa-folder-open"></i>
+                        <span>Voucher</span></a>
+             </li>
           <li class="nav-item <%if (name.Contains("checkin"))
                     {%>active<%}%>">
                     <a class="nav-link" href="/cp/page/checkin/CheckIn.aspx">
