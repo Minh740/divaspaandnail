@@ -129,9 +129,9 @@
             console.log($("#txtCode").val());
             $("#btn-save").attr("disabled", "disabled");
             if ($("#txtName").val().length == 0) {
-                swal("Please enter brand name");
+                alert("Please enter brand name");
             } else if ($("#txtCode").val().length == 0) {
-                swal("Please enter color");
+                alert("Please enter color");
             } else {
                 $.post("/cp/do/color/add.ashx", {
                     name: $("#txtName").val(),
@@ -143,7 +143,7 @@
                         alert("Error occur. Please try again");
                         console.log(data.error);
                     } else {
-                        swal("Insert success");
+                        alert("Insert success");
                         location.reload();
                     }
                 });
@@ -163,10 +163,10 @@
                     data = JSON.parse(data);
 
                     if (data.success == -1) {
-                        swal("Error occur. Please try again");
+                        alert("Error occur. Please try again");
                         console.log(data.error);
                     } else {
-                        swal("Edit success");
+                        alert("Edit success");
                         location.reload();
                     }
                 })
@@ -175,13 +175,13 @@
             }
 
         }
-        function Delete(input, id) {
+        function Delete(id, input) {
             $(input).prop("disabled", true);
             $(input).text("Deleting");
             ShowLoading();
             alertify.confirm("Are you sure Delete", function () {
                 $.ajax({
-                    url: "/cp/do/color/delete.ashx",
+                    url: "/cp/do/color/delete.aspx",
                     method: "post",
                     data: {
                         id: id,

@@ -5,7 +5,7 @@ using System.Web;
 using Newtonsoft.Json;
 
 public class edit : IHttpHandler {
-   public void ProcessRequest(HttpContext context)
+    public void ProcessRequest(HttpContext context)
     {
         context.Response.ContentType = "text/plain";
         try
@@ -15,6 +15,7 @@ public class edit : IHttpHandler {
             ColorTBx color = CM.GetByID(ID);
             color.Name = context.Request["name"];
             color.BrandID = Convert.ToInt32(context.Request["brandID"]);
+            color.HexCode = context.Request["hex"];
             CM.Save();
             context.Response.Write(JsonConvert.SerializeObject(new
             {
