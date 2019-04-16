@@ -8,7 +8,7 @@
             <th>VoucherDefaultCost</th>
             <th>VoucherCode</th>
             <th>UserId</th>
-           
+            <th>Action</th>
             
         </tr>
     </thead>
@@ -35,16 +35,13 @@
            <td><%=i.VoucherCode%></td>
            <td><%=i.UserId%></td>
             <td>
-                <div class="dropdown">
-                                <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Action
-                                            <span class="caret"></span></button>
 
-                                    <ul class="dropdown-menu" style="padding:5px">
-                                        <li style="float:left;margin-left:5px"><button class="btn btn-success" onclick="Edit(<%=i.VoucherID%>)">Edit</button></li>
-                                        <li style="float:left;margin-left:5px"><button class="btn btn-danger" onclick="Delete(<%=i.VoucherID%>)">Delete</button></li>
-                                    </ul>
-                                
-                                </div>
+                        <a class="btn btn-info" onclick="Edit(<%=i.VoucherID%>)">
+                            <i class="fa fa-edit" style="font-size: 15px; right: 10px"></i>
+                        </a>
+                         <a class="btn" onclick="Delete(<%=i.VoucherID%>)">
+                             <i class="fa fa-trash" style="font-size: 15px"></i>
+                         </a>
                 <%--<button class="btn btn-primary" onclick="Edit(<%=i.RewardID%>)">Edit</button>--%>
             </td>
         </tr>
