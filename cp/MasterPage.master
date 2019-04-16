@@ -220,7 +220,7 @@
         <li class="nav-item <%if (name.Contains("brand"))
                     {%>active<%}%>">
                     <a class="nav-link" href="/cp-brand">
-                        <i class="far fa-edit"></i>
+                        <i class="fab fa-elementor"></i>
                         <span>Brand</span></a>
                 </li>
 
