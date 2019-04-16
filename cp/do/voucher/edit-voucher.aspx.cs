@@ -10,7 +10,7 @@ public partial class cp_do_voucher_edit_voucher : System.Web.UI.Page
     VoucherManager VM = new VoucherManager();
     protected void Page_Load(object sender, EventArgs e)
     {
-        int voucherid = Convert.ToInt32(Request["voucherid"]);
+        int voucherid = Convert.ToInt32(Request["id"]);
         string vouchername = Request["voucherlevel"];
 
         decimal vouchermincost = Convert.ToDecimal(Request["vouchermincost"]);
