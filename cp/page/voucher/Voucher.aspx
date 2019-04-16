@@ -9,7 +9,7 @@
         </li>
         <li class="breadcrumb-item active">Voucher</li>
     </ol>
-    <%--<a class="btn btn-success" data-toggle="modal" data-target="#modalAddVoucher">Add New Voucher</a>--%>
+    <a class="btn btn-success" data-toggle="modal" data-target="#modalAddVoucher">Add New Voucher</a>
         
     <!-- /page header -->
     <!-- Content area -->
@@ -17,8 +17,8 @@
         <!-- Table -->
         <div class="panel panel-flat">
             <div class="panel-heading">
-                <%--<input id="txtSearch" style="width: 500px; margin-left: 200px; float: left; overflow: hidden;" type="text" class="form-control" placeholder="Input phonenumber and press Enter" />
-                <button style="" class="btn btn-search btn-success" onclick="SearchReward()">Search</button>--%>
+                <input id="txtSearch" style="width: 500px; margin-left: 200px; float: left; overflow: hidden;" type="text" class="form-control" placeholder="Input phonenumber and press Enter" />
+                <button style="" class="btn btn-search btn-success" onclick="SearchReward()">Search</button>
 
                 <h5 class="panel-title" style="width: 300px"><span class="icon-medal2"></span>Voucher (<%=list.Count %>)</h5>
                 <div class="heading-elements">
@@ -85,7 +85,7 @@
                 <div class="modal-body">
 
                     <div class="form-group">
-                        <label class="control-label">UserId   </label>
+                        <label class="control-label">UserId</label>
 
 
                         <input class="form-control" id="txtuserid"  disabled="disabled" />
@@ -326,7 +326,7 @@
             var voucherdesc = $("#txtvoucherdesc").val();
 
             var UserId = $("#txtuserid").val();
-            $.post("/cp/do/edit-voucher.aspx", {
+            $.post("/cp/do/voucher/edit-voucher.aspx", {
 
                 voucherid: voucherid,
                 UserId: UserId,
@@ -338,11 +338,11 @@
 
             }, function (data) {
                 if (data == 1) {
-                    swal("OK.!");
-                    location.href = "/cp/Voucher.aspx"
+                    alert("OK.!");
+                    location.href = "/cp/page/voucher/Voucher.aspx"
                 }
                 else {
-                    swal("Lỗi, thử lại!!")
+                    alert("Lỗi, thử lại!!")
                 }
             }
 
@@ -430,7 +430,7 @@
                 //$("#txtReward").val("0");
             }
             else {
-                document.getElementById("m-title").innerHTML = "Edit Reward";
+                document.getElementById("m-title").innerHTML = "Edit Voucher";
                 $("#txtpass-word").hide();
                 $("#txtUserIdAdd").hide();
                 $("#txtrewarddate").hide();
@@ -483,7 +483,7 @@
 
         function SearchReward() {
             var phone = $("#txtSearch").val();
-            $.post("/api/search-voucher.aspx", {
+            $.post("/cp/page/voucher/search-voucher.aspx", {
                 phone: phone,
             }, function (data) {
 
