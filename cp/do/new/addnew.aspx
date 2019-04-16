@@ -1,0 +1,1 @@
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="addnew.aspx.cs" Inherits="cp_do_new_addnew" %>

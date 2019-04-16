@@ -41,9 +41,11 @@
     <link href="/cp/css-tiny/style.css" rel="stylesheet" />
   <!-- Core plugin JavaScript-->
   <script src="/cp/vendor/jquery-easing/jquery.easing.min.js"></script>
-
+ 
   <!-- Custom scripts for all pages-->
   <script src="/js/sb-admin-2.min.js"></script>
+   
+   
      <script>
         tinymce.init({
             selector: "textarea.tinymce",
@@ -178,8 +180,16 @@
                     <i class="fas fa-image"></i>
                     <span>Product</span></a>
             </li>
+        
+                <li class="nav-item <%if (name.Contains("new"))
+                {%>active<%}%>">
+                <a class="nav-link" href="/cp/page/new/New.aspx">
+                    <i class="fas fa-fw fa-chart-area"></i>
+                    <span>New</span>
+                </a>
+            </li>
 
-           <%-- <li class="nav-item <%if (name.Contains("meta"))
+           <%-- <li class="nav-item <%if (name.Contains("meta"))new
                 {%>active<%}%>">
                 <a class="nav-link" href="/cp/page/meta/Meta.aspx">
                     <i class="fas fa-fw fa-chart-area"></i>
