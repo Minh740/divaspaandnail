@@ -1,0 +1,297 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="DivaSpa1DBx" Class="DataClassesDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Table Name="adminni.UserCheckInTBx" Member="UserCheckInTBxes">
+    <Type Name="UserCheckInTBx">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="UserId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CheckInDay" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="minh.CouponsTBx" Member="CouponsTBxes">
+    <Type Name="CouponsTBx">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Link" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="Link2" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="Type" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Status" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Date" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="[Desc]" Member="Desc" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.AdminTBx" Member="AdminTBxes">
+    <Type Name="AdminTBx">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Password" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Status" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.BookingTBx" Member="BookingTBxes">
+    <Type Name="BookingTBx">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="Email" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="UserID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="AddDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="BookDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Status" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Stylist" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="Phone" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Service1" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="Service2" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="Service3" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="ColorID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.BrandTBx" Member="BrandTBxes">
+    <Type Name="BrandTBx">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="Status" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.CategoryTBx" Member="CategoryTBxes">
+    <Type Name="CategoryTBx">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="ParentID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Description" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="[Order]" Member="Order" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Status" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="CategoryTBx_CategoryTBx" Member="CategoryTBxes" ThisKey="ID" OtherKey="ParentID" Type="CategoryTBx" />
+      <Association Name="CategoryTBx_ImageCategoryTBx" Member="ImageCategoryTBxes" ThisKey="ID" OtherKey="CategoryID" Type="ImageCategoryTBx" />
+      <Association Name="CategoryTBx_ServicesTBx" Member="ServicesTBxes" ThisKey="ID" OtherKey="CategoryID" Type="ServicesTBx" />
+      <Association Name="CategoryTBx_CategoryTBx" Member="CategoryTBx1" ThisKey="ParentID" OtherKey="ID" Type="CategoryTBx" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.CheckBirthday" Member="CheckBirthdays">
+    <Type Name="CheckBirthday">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="UserID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="SendYear" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ColorTBx" Member="ColorTBxes">
+    <Type Name="ColorTBx">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="Status" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="BrandID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="HexCode" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ContactTBx" Member="ContactTBxes">
+    <Type Name="ContactTBx">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="Email" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="Phone" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="BodyContent" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="Ip" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="Status" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CreateDay" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.GalleryTBx" Member="GalleryTBxes">
+    <Type Name="GalleryTBx">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Link" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="Link2" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="Type" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Status" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.GiftCardTBx" Member="GiftCardTBxes">
+    <Type Name="GiftCardTBx">
+      <Column Name="GiftCardID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="GiftCardName" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Column Name="GiftCardDescription" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="GiftCardAvatar" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Column Name="GiftCardCost" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="GiftCardAddedDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="GiftCardEndDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="GiftCardStatus" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="GiftCardCode" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="CreateByUserId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="GiveItToEmail" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="GiftCardNote" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Association Name="UsersTbx_GiftCardTBx" Member="UsersTbx" ThisKey="CreateByUserId" OtherKey="UserId" Type="UsersTbx" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.GiftCardTypeTBx" Member="GiftCardTypeTBxes">
+    <Type Name="GiftCardTypeTBx">
+      <Column Name="GiftCardTypeID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="TypeName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="TypeStatus" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TypeDescription" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Column Name="TypeOrder" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ImageCategoryTBx" Member="ImageCategoryTBxes">
+    <Type Name="ImageCategoryTBx">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="CategoryID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Link" Type="System.String" DbType="NVarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="Status" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Link2" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Association Name="CategoryTBx_ImageCategoryTBx" Member="CategoryTBx" ThisKey="CategoryID" OtherKey="ID" Type="CategoryTBx" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ImageTBx" Member="ImageTBxes">
+    <Type Name="ImageTBx">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="No" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.MetaTBx" Member="MetaTBxes">
+    <Type Name="MetaTBx">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="GroupCode" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="GroupName" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="Title" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="Description" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="IconURL" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="Status" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ButtonUrl" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.NewsTBx" Member="NewsTBxes">
+    <Type Name="NewsTBx">
+      <Column Name="NewsID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="NewsName" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="NewsContent" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="NewsStatus" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.NotificationTBx" Member="NotificationTBxes">
+    <Type Name="NotificationTBx">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Device_id" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="Registration_id" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="Status" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="UserID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.PageTBx" Member="PageTBxes">
+    <Type Name="PageTBx">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="Title" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="PageContent" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="Status" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ProductTBx" Member="ProductTBxes">
+    <Type Name="ProductTBx">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="Status" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.RewardDBx" Member="RewardDBxes">
+    <Type Name="RewardDBx">
+      <Column Name="RewardID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="UserId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Reward" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="RewardDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Price" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="Stastus" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Notes" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="VoucherCode" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="Discount" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="Payment" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="GitCredit" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="MethodPayment" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Association Name="UsersTbx_RewardDBx" Member="UsersTbx" ThisKey="UserId" OtherKey="UserId" Type="UsersTbx" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ServicesTBx" Member="ServicesTBxes">
+    <Type Name="ServicesTBx">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="Description" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="Price" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="CategoryID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Status" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="CategoryTBx_ServicesTBx" Member="CategoryTBx" ThisKey="CategoryID" OtherKey="ID" Type="CategoryTBx" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SliderTBx" Member="SliderTBxes">
+    <Type Name="SliderTBx">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="URL" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="Title" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="ShortDesc" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="Status" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.UserCardTBx" Member="UserCardTBxes">
+    <Type Name="UserCardTBx">
+      <Column Name="UserCardID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="CardID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CardUCode" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="CreateDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="GiveItToEmail" Type="System.String" DbType="NVarChar(120)" CanBeNull="true" />
+      <Column Name="Status" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CurrentCredit" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="CreateByUserId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Note" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Association Name="UsersTbx_UserCardTBx" Member="UsersTbx" ThisKey="CreateByUserId" OtherKey="UserId" Type="UsersTbx" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.UsersTbx" Member="UsersTbxes">
+    <Type Name="UsersTbx">
+      <Column Name="UserId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="FirstName" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="LastName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Password" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Email" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="PhoneNumber" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="Active" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="Status" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="RegisterDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Birthday" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="TotalReward" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="UserLevel" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="UserCredit" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="Token" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="TimesPlay" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="UsersTbx_GiftCardTBx" Member="GiftCardTBxes" ThisKey="UserId" OtherKey="CreateByUserId" Type="GiftCardTBx" />
+      <Association Name="UsersTbx_RewardDBx" Member="RewardDBxes" ThisKey="UserId" OtherKey="UserId" Type="RewardDBx" />
+      <Association Name="UsersTbx_UserCardTBx" Member="UserCardTBxes" ThisKey="UserId" OtherKey="CreateByUserId" Type="UserCardTBx" />
+      <Association Name="UsersTbx_VouchersTBx" Member="VouchersTBxes" ThisKey="UserId" OtherKey="UserId" Type="VouchersTBx" />
+    </Type>
+  </Table>
+  <Table Name="dbo.UserTBx" Member="UserTBxes">
+    <Type Name="UserTBx">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="FirstName" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="LastName" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="Email" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="Phone" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="Birthday" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="CreateDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Status" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.VouchersTBx" Member="VouchersTBxes">
+    <Type Name="VouchersTBx">
+      <Column Name="VoucherID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="VoucherName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="VoucherDescription" Type="System.String" DbType="NVarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="VoucherAvatar" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="VoucherMinCost" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="VoucherDefaultCost" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="VoucherAddedDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="VoucherEndDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="VoucherStatus" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="VoucherCode" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="UserId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="RedeemDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Association Name="UsersTbx_VouchersTBx" Member="UsersTbx" ThisKey="UserId" OtherKey="UserId" Type="UsersTbx" IsForeignKey="true" />
+    </Type>
+  </Table>
+</Database>

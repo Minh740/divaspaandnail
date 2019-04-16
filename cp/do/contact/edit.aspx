@@ -1,0 +1,1 @@
+﻿<%@ Page Language="C#" AutoEventWireup="true" ValidateRequest="false" CodeFile="edit.aspx.cs" Inherits="do_edit_contact" %>

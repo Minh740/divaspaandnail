@@ -1,0 +1,211 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 18, 19.375" name="DataClasses">
+  <DataContextMoniker Name="/DataClassesDataContext" />
+  <nestedChildShapes>
+    <classShape Id="0462bbb8-d5bf-44ef-ad08-5408ea7aa72f" absoluteBounds="6.75, 6.75, 2, 1.3862939453125005">
+      <DataClassMoniker Name="/DataClassesDataContext/UserCheckInTBx" />
+      <nestedChildShapes>
+        <elementListCompartment Id="76325dda-b312-475e-8bf5-1f50bf31225a" absoluteBounds="6.765, 7.21, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="e851b588-0de9-4dac-90a4-e73720611469" absoluteBounds="9.75, 6.75, 2, 2.3478011067708344">
+      <DataClassMoniker Name="/DataClassesDataContext/CouponsTBx" />
+      <nestedChildShapes>
+        <elementListCompartment Id="7b03bf68-f333-4826-ad46-8722d77e288b" absoluteBounds="9.765, 7.21, 1.9700000000000002, 1.7878011067708335" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="cbaf5393-bb8e-49e8-b342-3a6fcf1c9374" absoluteBounds="6.75, 10.75, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/DataClassesDataContext/AdminTBx" />
+      <nestedChildShapes>
+        <elementListCompartment Id="f36bec3d-a419-4b8b-a3ce-95f55b7c7eed" absoluteBounds="6.765, 11.21, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="927a1553-7788-494f-951a-1eb253315536" absoluteBounds="9.75, 10.75, 2, 3.3093082682291666">
+      <DataClassMoniker Name="/DataClassesDataContext/BookingTBx" />
+      <nestedChildShapes>
+        <elementListCompartment Id="93ccdd79-9716-4e4d-9728-efbe6eaa19a8" absoluteBounds="9.765, 11.21, 1.9700000000000002, 2.7493082682291665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="9eb2c32c-9274-4064-8212-e173d7d40a56" absoluteBounds="12.75, 0.75, 2, 1.3862939453125003">
+      <DataClassMoniker Name="/DataClassesDataContext/BrandTBx" />
+      <nestedChildShapes>
+        <elementListCompartment Id="2ed39c91-05ff-4a28-9dcb-79470e22f766" absoluteBounds="12.765, 1.21, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="a98603ed-9f78-4934-a4c3-f8e1ac162505" absoluteBounds="6.75, 2.25, 2, 1.9631982421875005">
+      <DataClassMoniker Name="/DataClassesDataContext/CategoryTBx" />
+      <nestedChildShapes>
+        <elementListCompartment Id="b91838e2-29bf-44da-97e4-ea67437c0fd1" absoluteBounds="6.765, 2.71, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="260e75b3-8c26-44d0-95b5-4c54beb8f685" absoluteBounds="12.75, 3.75, 2, 1.3862939453125005">
+      <DataClassMoniker Name="/DataClassesDataContext/CheckBirthday" />
+      <nestedChildShapes>
+        <elementListCompartment Id="8de75dc4-d7b7-49ca-9fc2-5490481a491d" absoluteBounds="12.765, 4.21, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="30b41987-0ad4-49a8-9dec-0771659a1a50" absoluteBounds="12.75, 6.75, 2, 1.7708968098958335">
+      <DataClassMoniker Name="/DataClassesDataContext/ColorTBx" />
+      <nestedChildShapes>
+        <elementListCompartment Id="00684a1b-0b62-41f2-bf55-ed673300924e" absoluteBounds="12.765, 7.21, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="abdcc433-c75e-4e37-9d72-c479f7117fac" absoluteBounds="12.75, 9.75, 2, 2.3478011067708344">
+      <DataClassMoniker Name="/DataClassesDataContext/ContactTBx" />
+      <nestedChildShapes>
+        <elementListCompartment Id="e3ac69a2-d44c-4ce2-ae3f-474ddf84a51a" absoluteBounds="12.765, 10.21, 1.9700000000000002, 1.7878011067708335" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="6621f2f0-431f-48ec-bbed-5495b301d6ba" absoluteBounds="12.75, 13.75, 2, 1.9631982421874987">
+      <DataClassMoniker Name="/DataClassesDataContext/GalleryTBx" />
+      <nestedChildShapes>
+        <elementListCompartment Id="e89cba5e-9d83-4953-90b3-7d04391b3ec8" absoluteBounds="12.765, 14.21, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="f00ec3ad-6a62-4d32-99b5-632bcb941268" absoluteBounds="3.5, 4.875, 2, 3.1170068359375005">
+      <DataClassMoniker Name="/DataClassesDataContext/GiftCardTBx" />
+      <nestedChildShapes>
+        <elementListCompartment Id="a52763dd-ddde-40a1-8d4f-6b243f5e06f1" absoluteBounds="3.515, 5.335, 1.9700000000000002, 2.5570068359375" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="12009ad3-341c-4939-8c54-4d2f775e0976" absoluteBounds="15.75, 0.75, 2, 1.7708968098958329">
+      <DataClassMoniker Name="/DataClassesDataContext/GiftCardTypeTBx" />
+      <nestedChildShapes>
+        <elementListCompartment Id="617b63b2-4f9a-4267-8126-3e00467775aa" absoluteBounds="15.765, 1.21, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="304f357f-e271-4972-af50-e8cb5ec57dff" absoluteBounds="9.5, 1, 2, 1.7708968098958331">
+      <DataClassMoniker Name="/DataClassesDataContext/ImageCategoryTBx" />
+      <nestedChildShapes>
+        <elementListCompartment Id="7d3697f2-aabc-4efd-a6b7-314863b90573" absoluteBounds="9.515, 1.46, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="f3e3be89-47d5-4963-a83f-23a2dd77cf28" absoluteBounds="15.75, 3.75, 2, 1.3862939453125005">
+      <DataClassMoniker Name="/DataClassesDataContext/ImageTBx" />
+      <nestedChildShapes>
+        <elementListCompartment Id="61caae7f-6ed3-4ec5-925b-a1ac05d22459" absoluteBounds="15.765, 4.21, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="b4d19f4e-563b-4365-968e-3ded2737dcce" absoluteBounds="15.75, 6.75, 2, 2.5401025390624996">
+      <DataClassMoniker Name="/DataClassesDataContext/MetaTBx" />
+      <nestedChildShapes>
+        <elementListCompartment Id="6b1cb6ce-fcbf-4b7a-b9c7-f7dd804fe4df" absoluteBounds="15.765, 7.21, 1.9700000000000002, 1.9801025390625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="61208438-e426-460e-8ca9-c297a094b684" absoluteBounds="6.75, 15.75, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/DataClassesDataContext/NewsTBx" />
+      <nestedChildShapes>
+        <elementListCompartment Id="af343197-c83a-4358-b446-1c0a888f6672" absoluteBounds="6.765, 16.21, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="a2a8f675-6ff9-445e-ae58-c32f51faa920" absoluteBounds="15.75, 10.75, 2, 1.7708968098958344">
+      <DataClassMoniker Name="/DataClassesDataContext/NotificationTBx" />
+      <nestedChildShapes>
+        <elementListCompartment Id="d12f13cd-f013-4ef3-aa2e-09329b5931f6" absoluteBounds="15.765, 11.21, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="55594ae8-b606-4a76-a921-2c89da8d8e65" absoluteBounds="15.75, 13.75, 2, 1.7708968098958344">
+      <DataClassMoniker Name="/DataClassesDataContext/PageTBx" />
+      <nestedChildShapes>
+        <elementListCompartment Id="178da666-88ba-41c8-b930-6eed99a58ecb" absoluteBounds="15.765, 14.21, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="581c6df9-e6b0-4f9e-874b-926176c16338" absoluteBounds="0.75, 16.75, 2, 1.3862939453125023">
+      <DataClassMoniker Name="/DataClassesDataContext/ProductTBx" />
+      <nestedChildShapes>
+        <elementListCompartment Id="8dbbbb83-9d2c-4f1b-b251-5509a0f86ed1" absoluteBounds="0.765, 17.21, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="95ad643c-a340-4dea-8489-9b7f3c875675" absoluteBounds="3.5, 8.75, 2, 3.1170068359375023">
+      <DataClassMoniker Name="/DataClassesDataContext/RewardDBx" />
+      <nestedChildShapes>
+        <elementListCompartment Id="dbddf235-9687-4081-b7f4-20156d8d661e" absoluteBounds="3.515, 9.21, 1.9700000000000002, 2.5570068359375" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="734bb437-83f0-4dd7-ac56-2e2df8db906f" absoluteBounds="9.5, 3.625, 2, 1.9631982421875005">
+      <DataClassMoniker Name="/DataClassesDataContext/ServicesTBx" />
+      <nestedChildShapes>
+        <elementListCompartment Id="82995007-260c-425d-85bb-1bf1e6419833" absoluteBounds="9.515, 4.085, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="e558a2cf-bfbc-4a6b-9d1c-ec589ac3b901" absoluteBounds="9.75, 16.75, 2, 1.7708968098958309">
+      <DataClassMoniker Name="/DataClassesDataContext/SliderTBx" />
+      <nestedChildShapes>
+        <elementListCompartment Id="a23dc165-522f-4696-9730-468e1af50301" absoluteBounds="9.765, 17.21, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="5b763e25-e2c8-478c-9b67-05030419f458" absoluteBounds="3.5, 1.5, 2, 2.5401025390625005">
+      <DataClassMoniker Name="/DataClassesDataContext/UserCardTBx" />
+      <nestedChildShapes>
+        <elementListCompartment Id="7ac22296-41a9-41dc-84b8-7cdb1f66fc14" absoluteBounds="3.515, 1.96, 1.9700000000000002, 1.9801025390625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="2e3254a1-4ed4-4f3d-8836-00d7bcea325d" absoluteBounds="0.75, 6.75, 2, 3.6939111328124987">
+      <DataClassMoniker Name="/DataClassesDataContext/UsersTbx" />
+      <nestedChildShapes>
+        <elementListCompartment Id="f704d8d4-c35b-4111-bf12-ab1984a6fd8b" absoluteBounds="0.765, 7.21, 1.9700000000000002, 3.1339111328125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="1a8aad5b-3cd3-441b-8191-854731840d15" absoluteBounds="12.75, 16.75, 2, 2.3478011067708309">
+      <DataClassMoniker Name="/DataClassesDataContext/UserTBx" />
+      <nestedChildShapes>
+        <elementListCompartment Id="cb14d448-40a0-4e3c-8513-24a520e134a7" absoluteBounds="12.765, 17.21, 1.9700000000000002, 1.7878011067708335" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="534b9a46-4061-4469-9c43-afba3222538e" absoluteBounds="3.5, 12.5, 2, 3.1170068359375023">
+      <DataClassMoniker Name="/DataClassesDataContext/VouchersTBx" />
+      <nestedChildShapes>
+        <elementListCompartment Id="973f60e2-aab1-40ec-84c3-b6a3fd5eea8f" absoluteBounds="3.515, 12.96, 1.9700000000000002, 2.5570068359375" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(7.45863627929687 : 4.2131982421875); (7.45863627929687 : 4.4631982421875); (8.05523818359375 : 4.4631982421875); (8.05523818359375 : 4.2131982421875)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/DataClassesDataContext/CategoryTBx/CategoryTBx_CategoryTBx" />
+      <nodes>
+        <classShapeMoniker Id="a98603ed-9f78-4934-a4c3-f8e1ac162505" />
+        <classShapeMoniker Id="a98603ed-9f78-4934-a4c3-f8e1ac162505" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(8.75 : 2.51044840494792); (9.5 : 2.51044840494792)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/DataClassesDataContext/CategoryTBx/CategoryTBx_ImageCategoryTBx" />
+      <nodes>
+        <classShapeMoniker Id="a98603ed-9f78-4934-a4c3-f8e1ac162505" />
+        <classShapeMoniker Id="304f357f-e271-4972-af50-e8cb5ec57dff" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(8.75 : 3.91909912109375); (9.5 : 3.91909912109375)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/DataClassesDataContext/CategoryTBx/CategoryTBx_ServicesTBx" />
+      <nodes>
+        <classShapeMoniker Id="a98603ed-9f78-4934-a4c3-f8e1ac162505" />
+        <classShapeMoniker Id="734bb437-83f0-4dd7-ac56-2e2df8db906f" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 7.37100341796875); (3.5 : 7.37100341796875)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/DataClassesDataContext/UsersTbx/UsersTbx_GiftCardTBx" />
+      <nodes>
+        <classShapeMoniker Id="2e3254a1-4ed4-4f3d-8836-00d7bcea325d" />
+        <classShapeMoniker Id="f00ec3ad-6a62-4d32-99b5-632bcb941268" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 9.59695556640625); (3.5 : 9.59695556640625)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/DataClassesDataContext/UsersTbx/UsersTbx_RewardDBx" />
+      <nodes>
+        <classShapeMoniker Id="2e3254a1-4ed4-4f3d-8836-00d7bcea325d" />
+        <classShapeMoniker Id="95ad643c-a340-4dea-8489-9b7f3c875675" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(1.75 : 6.75); (1.75 : 2.77005126953125); (3.5 : 2.77005126953125)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/DataClassesDataContext/UsersTbx/UsersTbx_UserCardTBx" />
+      <nodes>
+        <classShapeMoniker Id="2e3254a1-4ed4-4f3d-8836-00d7bcea325d" />
+        <classShapeMoniker Id="5b763e25-e2c8-478c-9b67-05030419f458" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(1.75 : 10.4439111328125); (1.75 : 14.0585034179688); (3.5 : 14.0585034179688)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/DataClassesDataContext/UsersTbx/UsersTbx_VouchersTBx" />
+      <nodes>
+        <classShapeMoniker Id="2e3254a1-4ed4-4f3d-8836-00d7bcea325d" />
+        <classShapeMoniker Id="534b9a46-4061-4469-9c43-afba3222538e" />
+      </nodes>
+    </associationConnector>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>
