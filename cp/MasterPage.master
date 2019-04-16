@@ -13,26 +13,51 @@
   <!-- Custom fonts for this template-->
   <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
   <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css">
+   <link href="assets/css/icons/icomoon/styles.css" rel="stylesheet" type="text/css" />
+<%--    <link href="assets/css/minified/core.min.css" rel="stylesheet" type="text/css" />--%>
+    <link href="assets/css/minified/components.min.css" rel="stylesheet" type="text/css" />
+    <link href="assets/css/minified/colors.min.css" rel="stylesheet" type="text/css" />
+
+    <!-- /global stylesheets -->
+
+
+    <!-- JQUERY files -->
+<%--    <script src="lib/jquery/jquery-3.2.1.js"></script>--%>
+    <!--Bootstrap-->
+<%--    <script type="text/javascript" src="/cp/lib/boostrap/bootstrap.min.js"></script>
+    <link href="/cp/lib/boostrap/bootstrap.min.css" rel="stylesheet" />--%>
+    <!-- Theme JS files -->
+<%--    <script type="text/javascript" src="assets/js/core/app.js"></script>
+
+    <!-- swal 2-->
+    <script src="/cp/lib/swal2/sweetalert2.all.js"></script>
+    <link href="/cp/lib/swal2/sweetalert2.min.css" rel="stylesheet" />
+
+    <!-- date picker -->
+    <script src="/cp/lib/datepicker/js/moment.js"></script>
+    <script src="/cp/lib/datepicker/js/bootstrap-datetimepicker.js"></script>
+    <link href="/cp/lib/datepicker/css/bootstrap-datetimepicker.css" rel="stylesheet" />
+    <link href="/cp/lib/datepicker/css/bootstrap-datetimepicker-standalone.css" rel="stylesheet" />
+
+    <!-- alertify-->
+    <script src="/cp/lib/alertifyjs/alertify.js"></script>
+    <link href="/cp/lib/alertifyjs/css/alertify.css" rel="stylesheet" />--%>
+
 
   <!-- Custom styles for this template-->
   <link href="/css/sb-admin-2.min.css" rel="stylesheet">
        <script src="/js/jquery-3.2.1.js"></script>
+
+
 	 <!-- Bootstrap core JavaScript-->
     <script src="/cp/plugin/tinymce/tinymce.min.js"></script>
     <script src="/cp/alertify/alertify.js"></script>
     <script src="/cp/alertify/alertify.min.js"></script>
     <link href="/cp/alertify/css/alertify.min.css" rel="stylesheet" />
     <link href="/cp/alertify/css/themes/default.min.css" rel="stylesheet" />
-     <link href="/cp/assets/css/icons/icomoon/styles.css" rel="stylesheet" type="text/css" />
-<%--    <link href="/cp/assets/css/minified/core.min.css" rel="stylesheet" type="text/css" />--%> <%--css phan reward--%>
-    <link href="/cp/assets/css/minified/components.min.css" rel="stylesheet" type="text/css" />
-    <link href="/cp/assets/css/minified/colors.min.css" rel="stylesheet" type="text/css" />
 
-     <script src="/cp/lib/datepicker/js/moment.js"></script>
-    <script src="/cp/lib/datepicker/js/bootstrap-datetimepicker.js"></script>
-    <link href="/cp/lib/datepicker/css/bootstrap-datetimepicker.css" rel="stylesheet" />
-    <link href="/cp/lib/datepicker/css/bootstrap-datetimepicker-standalone.css" rel="stylesheet" />
+
+    
 
     <script src="/cp/js/effect.js"></script>
     <link href="/cp/alertify/css/alertify.css" rel="stylesheet" />
@@ -211,12 +236,20 @@
                     <i class="far fa-edit"></i>
                     <span>User</span></a>
             </li>
-            <li class="nav-item <%if (name.Contains("reward"))
+
+            <li class="nav-item <%if (name.Contains("booking"))
                     {%>active<%}%>">
-                    <a class="nav-link" href="/cp-reward">
+                    <a class="nav-link" href="/cp/page/appointment/booking.aspx">
                         <i class="far fa-edit"></i>
-                        <span>Reward</span></a>
-                </li>
+                        <span>Appointment</span></a>
+             </li>
+
+               <li class="nav-item <%if (name.Contains("color"))
+                    {%>active<%}%>">
+                    <a class="nav-link" href="/cp/page/color/Color.aspx">
+                        <i class="far fa-edit"></i>
+                        <span>Color</span></a>
+             </li>
 
       <!-- Divider -->
       <hr class="sidebar-divider">
