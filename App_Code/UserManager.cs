@@ -9,11 +9,13 @@ using System.Web;
 public class UserManager
 {
     DataClassesDataContext db = new DataClassesDataContext();
+
     public void Save()
     {
         db.SubmitChanges();
     }
 
+    // get id user
     public UsersTbx GetUserByID(int id)
     {
         return db.UsersTbxes.Where(u => u.UserId == id && u.Status == 1).FirstOrDefault();

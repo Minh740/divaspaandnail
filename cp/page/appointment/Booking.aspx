@@ -25,7 +25,7 @@
     </ol>
     <div class="panel panel-flat">
         <div class="panel-heading">
-            <h5 class="panel-title">Appointment (<%=list.Count %>)</h5>
+            <h7 class="panel-title">Appointment (<%=list.Count %>)</h7>
             <div class="heading-elements">
             </div>
         </div>
@@ -73,34 +73,39 @@
 
     <script>
         function Delete(id, input) {
-            swal({
-                title: 'Are you sure?',
-                text: "You won't be able to revert this!",
-                type: 'warning',
-                showCancelButton: true,
-                confirmButtonColor: '#3085d6',
-                cancelButtonColor: '#d33',
-                confirmButtonText: 'Yes, delete it!'
-            }).then(result => {
-                if (result.value) {
-                    $(input).attr("disabled", "disabled");
-                    $(input).text("Deleting");
-                    $.post("/cp/do/booking/delete.ashx", {
-                        id: id
-                    }, data => {
+            $(input).prop("disabled", true);
+            $(input).text("Deleting");
+            ShowLoading();
+            alertify.confirm("Are you sure Delete", function () {
+                $.ajax({
+                    url: "/cp/do/booking/delete.aspx",
+                    method: "post",
+                    data: {
+                        id: id,
+                    },
+                    success: function (data) {
                         data = JSON.parse(data);
                         if (data.success == -1) {
-                            alertify.error("Error occur. Please try again");
+                            alertify.error("Error. Please try again");
                             console.log(data.error);
-                            $(input).removeAttr("disabled");
-                            $(input).text("Delete");
+
                         } else {
-                            alertify.success("Delete success");
                             location.reload();
                         }
-                    })
-                }
-            })
+                        $(input).prop("disabled", false);
+                        $(input).text("Delete");
+                        HideLoading();
+                    },
+                    error: function (error) {
+                        alertify.error("Error. Please try again");
+                        console.log(error);
+                        $(input).prop("disabled", false);
+                        $(input).text("Delete");
+                        HideLoading();
+                    }
+                })
+
+            });
         }
 
     </script>

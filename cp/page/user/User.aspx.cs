@@ -7,11 +7,17 @@ using System.Web.UI.WebControls;
 
 public partial class cp_page_user_User : System.Web.UI.Page
 {
-    protected List<UsersTbx> listUser;
+
+    public List<UsersTbx> list;
+    protected string[] level;
+
     protected void Page_Load(object sender, EventArgs e)
     {
-        UserManager UM = new UserManager();
-        listUser = UM.GetUserList();
-
+        UserManager um = new UserManager();
+        list = um.GetUserList();
+        list.Reverse();
+        list = list.ToList();
+        Page.Title = "Users";
+        level = new string[4] { "-", "Silver", "Gold", "Platinum" };
     }
 }
