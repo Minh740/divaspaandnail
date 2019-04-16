@@ -35,7 +35,7 @@
     <p></p>
     <div class="panel panel-flat">
         <div class="panel-heading">
-            <h5 class="panel-title">Slider (<%=list.Count %>)</h5>
+            <h7 class="panel-title">Color (<%=list.Count %>)</h7>
             <div class="heading-elements">
             </div>
         </div>

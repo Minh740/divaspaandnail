@@ -12,7 +12,7 @@
         </li>
         <li class="breadcrumb-item active">Gift Card</li>
     </ol>
-
+      <a id="btn-add" data-toggle="modal" data-target="#addGiftCardModal" class="btn btn-success">Add New Gift-Card</a>
     <p></p>
     <!-- /page header -->
     <!-- Content area -->
@@ -123,7 +123,7 @@
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    
                     <h4 class="modal-title">Add GiftCard</h4>
                 </div>
                 <div class="modal-body">
@@ -328,7 +328,7 @@
             
 
            
-                $.post("/cp/do/edit-giftcard.aspx", {
+                $.post("/cp/do/giftcard/edit-giftcard.aspx", {
 
                     GiftCardID: GiftCardID,
                     UserId: UserId,
@@ -341,7 +341,7 @@
                 }, function (data) {
                     if (data == 1) {
                         swal("OK.!");
-                        location.href = "/cp/GiftCard.aspx"
+                        location.reload();
                     }
                     else {
                         swal("Lỗi, thử lại!!")
@@ -364,11 +364,11 @@
             $("#txt-rewarddate").show();
             //$("#txtRewardDateAdd").hide();
             $("#rewardnote").show();
-            $.getJSON("/cp/do/get-json-giftcard.aspx", { id: id }, function (data) {
+            $.getJSON("/cp/do/giftcard/get-json-giftcard.aspx", { id: id }, function (data) {
 
                 $("#txtuserid").val(data.CreateByUserId);
 
-                $.getJSON("/cp/do/get-json-user.aspx", { id: data.UserId }, function (userdata) {
+                $.getJSON("/cp/do/giftcard/get-json-user.aspx", { id: data.UserId }, function (userdata) {
                     $("#txtusername").val(userdata.FirstName + userdata.LastName);
                     $("#txtPhone").val(userdata.PhoneNumber);
                     $("#txtEmail").val(userdata.Email);
@@ -391,10 +391,10 @@
         function Delete(id) {
             var r = confirm("Are you sure to Delete this giftcard ?");
             if (r == true) {
-                $.get("/cp/do/delete-giftcard.aspx", { id: id, status: -1 }, function (data) {
+                $.get("/cp/do/giftcard/delete-giftcard.aspx", { id: id, status: -1 }, function (data) {
                     if (data == -1) {
                         $('#model_' + id).remove();
-                        location.href = "/cp/GiftCard.aspx";
+                        location.reload();
                     }
                 })
             }
@@ -441,7 +441,7 @@
         function Searchuser() {
             var text = $("#txtSearchUser").val();
             console.log(text);
-            $.getJSON("/api/search-user.aspx", {
+            $.getJSON("/cp/api/search-user.aspx", {
                 searchStr: text,
             }, function (data) {
                 if (data == '0') {
@@ -488,7 +488,7 @@
         document.getElementById('txtSearch').onkeydown = function (event) {
             if (event.keyCode == 13) {
                 var phone = $("#txtSearch").val();
-                $.post("/api/search-giftcard.aspx", {
+                $.post("/cp/api/search-giftcard.aspx", {
                     phone: phone,
                 }, function (data) {
                     
@@ -543,11 +543,11 @@
             }
             if(flag == false)
             {
-                swal("Reward error", error);
+                alert("Reward error", error);
             }
             else{
             
-                $.post("/cp/do/add-new-giftcard.aspx", {
+                $.post("/cp/do/giftcard/add-new-giftcard.aspx", {
                     userID: userID,
                     giftcardname: giftcardname,
                     giftcardcost: giftcardcost,
@@ -559,7 +559,7 @@
                     
                 }, function (data) {
                     if (data == 1) {
-                        location.href = "/cp/GiftCard.aspx"
+                        location.reload();
                     }
                     else {
                         swal(data);
