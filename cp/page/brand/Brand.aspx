@@ -10,9 +10,10 @@
         <li class="breadcrumb-item active">Brand</li>
     </ol>
     <a class="btn btn-success" onclick="OpenModal(0,this)" >Add New Brand</a>
+    <p></p>
     <div class="panel panel-flat">
         <div class="panel-heading">
-            <h5 class="panel-title">Slider (<%=list.Count %>)</h5>
+            <%--<h5 class="panel-title">Slider (<%=list.Count %>)</h5>--%>
             <div class="heading-elements">
             </div>
         </div>
