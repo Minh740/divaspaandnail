@@ -1,0 +1,1 @@
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="get-json-voucher.aspx.cs" Inherits="cp_do_voucher_get_json_voucher" %>
