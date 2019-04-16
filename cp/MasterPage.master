@@ -221,6 +221,13 @@
                         <span>Color</span></a>
              </li>
 
+        <li class="nav-item <%if (name.Contains("brand"))
+                    {%>active<%}%>">
+                    <a class="nav-link" href="/cp/page/brand/Brand.aspx">
+                        <i class="fab fa-elementor"></i>
+                        <span>Brand</span></a>
+             </li>
+
       <!-- Divider -->
       <hr class="sidebar-divider">
 
