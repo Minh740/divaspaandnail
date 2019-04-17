@@ -75,7 +75,7 @@
                                 <a class="btn btn-info" onclick="OpenModal(<%=i.UserId%>)">
                                    <i class="fas fa-edit"></i>
                                 </a>
-                                <a class="btn"  onclick="Delete(<%=i.UserId%>,this)"><i class="fas fa-trash"></i></a>
+                                <a class="btn"  onclick="Delete(this,<%=i.UserId%>)"><i class="fas fa-trash"></i></a>
                                 <button  onclick="OpenRedeem(<%=i.UserId %>)"><i class="fas fa-gift"></i></button>
                             </div>
                         </td>
@@ -287,27 +287,27 @@
                 /^(([^<>()\[\]\.,;:\s@\"]+(\.[^<>()\[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
 
             if (fname.trim().length == 0) {
-                alertify.error("Please enter first name !");
+                alert.error("Please enter first name !");
             } else if (fname.trim().length < 2 || fname.trim().length > 100) {
-                alertify.error("Fist name more than 2 and less than 100 characters.");
+                alert.error("Fist name more than 2 and less than 100 characters.");
             } else if (lname.trim().length == 0) {
-                alertify.error("Please enter last name !");
+                alert.error("Please enter last name !");
             } else if (lname.trim().length < 2 || lname.trim().length > 100) {
-                alertify.error("Last name more than 2 and less than 100 characters.");
+                alert.error("Last name more than 2 and less than 100 characters.");
             } else if (password.trim().length == 0 || _repassword.trim().length == 0) {
-                alertify.error("Please enter password.");
+                alert.error("Please enter password.");
             } else if (password.trim() != _repassword.trim()) {
-                alertify.error("Confirm password invalid. ");
+                alert.error("Confirm password invalid. ");
             } else if (password.trim().length < 8) {
-                alertify.error("Password must more than 8 character. ");
+                alert.error("Password must more than 8 character. ");
             } else if (email.trim().length == 0) {
-                alertify.error("Please enter your email address!");
+                alert.error("Please enter your email address!");
             } else if (!re.test(email)) {
-                alertify.error("Not a valid email address");
+                alert.error("Not a valid email address");
             } else if (phone.trim().length == 0) {
-                alertify.error("Please enter your Phone.");
+                alert.error("Please enter your Phone.");
             } else if (birthday.trim().length == 0) {
-                alertify.error("Please enter your birthday!");
+                alert.error("Please enter your birthday!");
             } else {
                 $("#btn-save").attr("disabled", "disabled");
                 $("#btn-save").text("Adding");
@@ -386,7 +386,7 @@
             }
         }
 
-        function Delete(input, id) {
+        function Delete(input,id) {
             alertify.confirm("Are you sure Delete", function () {
                 $(input).prop("disabled", true);
                 ShowLoading();
@@ -403,7 +403,7 @@
                             console.log(data);
                         }
                         else {
-                            location.href = "/cp-voucher";
+                            location.href = "/cp-user";
                         }
                         $(input).prop("disabled", false);
                         HideLoading();

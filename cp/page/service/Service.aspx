@@ -13,6 +13,14 @@
     </ol>
     <a class="btn btn-success" href="/cp-add-service">Add New Service</a>
     <p></p>
+    
+    <div>
+        <div class="panel-heading">
+        <input id="txtSearch" style="width: 500px; margin-left: 200px; float: left; overflow: hidden;" type="text" class="form-control" placeholder="Input name service and press Enter" />
+        <button style="" class="btn btn-search btn-success" onclick="SearchReward()">Search</button>
+    </div>
+    <p></p>
+        <div id="tblReward">
     <table class="table table-bordered">
         <tbody>
             <tr>
@@ -44,6 +52,8 @@
             <%} %>
         </tbody>
     </table>
+            </div>
+        </div>
     <script>
 
 
@@ -77,6 +87,25 @@
                     }
                 })
             })
+        }
+
+
+        function SearchReward() {
+            var name = $("#txtSearch").val();
+            $.post("/cp/page/service/search-service.aspx", {
+                name: name,
+            }, function (data) {
+
+                $("#tblReward").html(data);
+            });
+        }
+        /* Search reward */
+        document.getElementById('txtSearch').onkeydown = function (event) {
+            if (event.keyCode == 13) {
+                SearchReward();
+            } else {
+                $("#tblReward").load(" #tblReward");
+            }
         }
     </script>
 
