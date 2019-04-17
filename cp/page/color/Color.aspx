@@ -143,7 +143,7 @@
                         alert("Error occur. Please try again");
                         console.log(data.error);
                     } else {
-                        alert("Insert success");
+                         swal("Insert success");
                         location.reload();
                     }
                 });
@@ -166,7 +166,7 @@
                         alert("Error occur. Please try again");
                         console.log(data.error);
                     } else {
-                        alert("Edit success");
+                        swal("Insert success");
                         location.reload();
                     }
                 })
@@ -193,6 +193,7 @@
                             console.log(data.error);
 
                         } else {
+                           swal("Delete success");
                             location.reload();
                         }
                         $(input).prop("disabled", false);
