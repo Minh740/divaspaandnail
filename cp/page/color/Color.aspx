@@ -60,8 +60,11 @@
                         <td data-id="<%=item.BrandID %>"><%=BM.GetByID((int)item.BrandID).Name %></td>
                         <td><%=item.HexCode %></td>
                         <td>
-                            <button class="btn btn-success" onclick="OpenModal(<%=item.ID %>,this)">Edit</button>
-                            <button class="btn btn-danger" onclick="Delete(<%=item.ID %>,this)">Delete</button>
+                            <a class="btn btn-info" onclick="OpenModal(<%=item.ID %>,this)"><i class="fa fa-edit" style="font-size: 15px; right: 10px"></i></a>
+                            <button class="btn" onclick="Delete(<%=item.ID %>,this)"><i class="fa fa-trash" style="font-size: 15px"></i></button>
+                              
+                       
+                            
                         </td>
                     </tr>
                     <%} %>
@@ -166,7 +169,7 @@
                         alert("Error occur. Please try again");
                         console.log(data.error);
                     } else {
-                        swal("Insert success");
+                        swal("Edit success");
                         location.reload();
                     }
                 })
@@ -177,7 +180,7 @@
         }
         function Delete(id, input) {
             $(input).prop("disabled", true);
-            $(input).text("Deleting");
+            //$(input).text("Deleting");
             ShowLoading();
             alertify.confirm("Are you sure Delete", function () {
                 $.ajax({
@@ -204,7 +207,7 @@
                         alertify.error("Error. Please try again");
                         console.log(error);
                         $(input).prop("disabled", false);
-                        $(input).text("Delete");
+                        //$(input).text("Delete");
                         HideLoading();
                     }
                 })

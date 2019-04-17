@@ -36,6 +36,7 @@
                             <th>GiftCardCost</th>
                             <th>GiftCardCode</th>
                             <th>CreateByUserID</th>
+                            <th>Action</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -47,19 +48,9 @@
                             <td><%=i.GiftCardCost %></td>
                             <td><%=i.GiftCardCode %></td>
                             <td><%=i.CreateByUserId %></td>
-
-
                             <td>
-                                <div class="dropdown">
-                                <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Action
-                                            <span class="caret"></span></button>
-
-                                    <ul class="dropdown-menu" style="padding:5px">
-                                        <li style="float:left;margin-left:5px"><button class="btn btn-success" onclick="Edit(<%=i.GiftCardID%>)">Edit</button></li>
-                                        <li style="float:left;margin-left:5px"><button class="btn btn-danger" onclick="Delete(<%=i.GiftCardID%>)">Delete</button></li>
-                                    </ul>
-                                
-                                </div>
+                                 <button class="btn btn-success" onclick="Edit(<%=i.GiftCardID%>)">Edit</button>
+                                 <button class="btn btn-danger" onclick="Delete(<%=i.GiftCardID%>)">Delete</button>
                             </td>
                         </tr>
                         <% } %>
@@ -474,8 +465,7 @@
                 console.log(data.FirstName);
                 if (data.FirstName.trim() != "" || data.LastName.trim() != "" || userlevel=="") {
                     $("#txtUserNameNew").val(userName);
-                    $("#txtUserID").val(data.UserId);
-                    
+                    $("#txtUserID").val(data.UserId);                  
                     $("#lblVoucher").html(data.VoucherList);
                     $("#lblgiftcard").html(data.GiftCardList);
                     $("#txtdiscount").val(userdiscount);

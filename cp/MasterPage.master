@@ -179,7 +179,7 @@
                     <span>Product</span></a>
             </li>
         
-                <li class="nav-item <%if (name.Contains("new"))
+                <li class="nav-item <%if (name.Contains("news"))
                 {%>active<%}%>">
                 <a class="nav-link" href="/cp/page/new/New.aspx">
                     <i class="far fa-newspaper"></i>
@@ -205,7 +205,7 @@
                     <span>Contact</span></a>
             </li>--%>
 
-            <li class="nav-item <%if (name.Contains("image"))
+            <li class="nav-item <%if (name.Contains("image-category"))
                 {%>active<%}%>">
                 <a class="nav-link" href="/cp-image-category">
                     <i class="fas fa-image"></i>
