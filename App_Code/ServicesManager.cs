@@ -28,6 +28,14 @@ public class ServicesManager
     {
         return db.ServicesTBxes.Where(u => u.Status != -1).OrderBy(u => u.Order).ToList();
     }
-
-
+    // get serviced by name
+    public ServicesTBx GetServiceByServiceName(string name)
+    {
+        return db.ServicesTBxes.Where(u => u.Name == name && u.Status == 1).FirstOrDefault();
+    }
+    //
+    public List<ServicesTBx> GetListServiceBySerciceId(int id)
+    {
+        return db.ServicesTBxes.Where(v => v.ID == id && v.Status == 1).ToList();
+    }
 }
