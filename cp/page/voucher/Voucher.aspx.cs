@@ -14,7 +14,7 @@ public partial class cp_page_voucher_Voucher : System.Web.UI.Page
     {
         VoucherManager VM = new VoucherManager();
         UM = new UserManager();
-        list = VM.GetListVoucher();
+        list = VM.GetList();
         list.Reverse();
         list = list.ToList();
         Page.Title = "Voucher";
