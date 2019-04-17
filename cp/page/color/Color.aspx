@@ -169,7 +169,7 @@
                         alert("Error occur. Please try again");
                         console.log(data.error);
                     } else {
-                        swal("Insert success");
+                        swal("Edit success");
                         location.reload();
                     }
                 })
@@ -180,7 +180,7 @@
         }
         function Delete(id, input) {
             $(input).prop("disabled", true);
-            $(input).text("Deleting");
+            //$(input).text("Deleting");
             ShowLoading();
             alertify.confirm("Are you sure Delete", function () {
                 $.ajax({
@@ -207,7 +207,7 @@
                         alertify.error("Error. Please try again");
                         console.log(error);
                         $(input).prop("disabled", false);
-                        $(input).text("Delete");
+                        //$(input).text("Delete");
                         HideLoading();
                     }
                 })
