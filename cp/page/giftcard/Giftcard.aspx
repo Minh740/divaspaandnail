@@ -554,11 +554,10 @@
                     giveittoemail: giveittoemail,
                     giftcarddesc: giftcarddesc,
                     giftcardnotes: giftcardnotes
-
-                    
                     
                 }, function (data) {
                     if (data == 1) {
+                        swal("Insert Success !")
                         location.reload();
                     }
                     else {

@@ -62,10 +62,10 @@ public partial class cp_do_giftcard_add_new_giftcard : System.Web.UI.Page
 
             int userID = Convert.ToInt32(Request["userID"]);
 
-            decimal GiftCardCost = Convert.ToDecimal(Request["GiftCardCost"]);
+            decimal GiftCardCost = Convert.ToDecimal(Request["giftcardcost"]);
 
-            string GiftCardName = Request["GiftCardName"];
-            string GiveItToEmail = Request["GiveItToEmail"];
+            string GiftCardName = Request["giftcardname"];
+            string GiveItToEmail = Request["giveittoemail"];
             string GiftCardDescription = Request["giftcarddesc"];
             string GiftCardNotes = Request["giftcardnotes"];
             int vouchernum = 9;

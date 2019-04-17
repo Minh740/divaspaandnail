@@ -62,6 +62,8 @@
         rout.MapPageRoute("", "cp-product", "~/cp/page/product/Product.aspx");
         rout.MapPageRoute("", "cp-edit-product-{productID}", "~/cp/page/product/Edit.aspx");
         rout.MapPageRoute("", "cp-add-product", "~/cp/page/product/Add.aspx");
+        //new
+        rout.MapPageRoute("", "cp-edit-new-{id}", "~/cp/page/new/Edit.aspx");
 
         //image
         rout.MapPageRoute("", "cp-image", "~/cp/page/image/Image.aspx");
