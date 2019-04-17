@@ -465,8 +465,7 @@
                 console.log(data.FirstName);
                 if (data.FirstName.trim() != "" || data.LastName.trim() != "" || userlevel=="") {
                     $("#txtUserNameNew").val(userName);
-                    $("#txtUserID").val(data.UserId);
-                    
+                    $("#txtUserID").val(data.UserId);                  
                     $("#lblVoucher").html(data.VoucherList);
                     $("#lblgiftcard").html(data.GiftCardList);
                     $("#txtdiscount").val(userdiscount);

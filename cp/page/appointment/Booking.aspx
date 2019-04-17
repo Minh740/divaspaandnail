@@ -90,6 +90,7 @@
                             console.log(data.error);
 
                         } else {
+                            swal("Delete Success!");
                             location.reload();
                         }
                         $(input).prop("disabled", false);
