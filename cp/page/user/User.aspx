@@ -386,35 +386,36 @@
             }
         }
 
-        function Delete(id, input) {
-            swal({
-                title: 'Are you sure?',
-                text: "You won't be able to revert this!",
-                type: 'warning',
-                showCancelButton: true,
-                confirmButtonColor: '#3085d6',
-                cancelButtonColor: '#d33',
-                confirmButtonText: 'Yes, delete it!'
-            }).then(result => {
-                if (result.value) {
-                    $(input).attr("disabled", "disabled");
-                    $(input).text("Deleting");
-                    $.post("/cp/do/user/delete.ashx", {
-                        id: id
-                    }, data => {
+        function Delete(input, id) {
+            alertify.confirm("Are you sure Delete", function () {
+                $(input).prop("disabled", true);
+                ShowLoading();
+                $.ajax({
+                    url: "/cp/do/user/delete.aspx",
+                    method: "post",
+                    data: {
+                        id: id,
+                    },
+                    success: function (data) {
                         data = JSON.parse(data);
                         if (data.success == -1) {
-                            alertify.error("Error occur. Please try again");
-                            console.log(data.error);
-                            $(input).removeAttr("disabled");
-                            $(input).text("Delete");
-                        } else {
-                            alertify.success("Delete success");
-                            location.reload();
+                            alertify.error("Error. Please try again");
+                            console.log(data);
                         }
-                    })
-                }
-            })
+                        else {
+                            location.href = "/cp-voucher";
+                        }
+                        $(input).prop("disabled", false);
+                        HideLoading();
+                    },
+                    error: function (error) {
+                        alertify.error("Error. Please try again.");
+                        console.log(error);
+                        $(input).prop("disabled", false);
+                        HideLoading();
+                    }
+                })
+            });
         }
 
         function IncreasePoint(userID) {
