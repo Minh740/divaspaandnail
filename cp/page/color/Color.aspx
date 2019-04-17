@@ -60,8 +60,11 @@
                         <td data-id="<%=item.BrandID %>"><%=BM.GetByID((int)item.BrandID).Name %></td>
                         <td><%=item.HexCode %></td>
                         <td>
-                            <button class="btn btn-success" onclick="OpenModal(<%=item.ID %>,this)">Edit</button>
-                            <button class="btn btn-danger" onclick="Delete(<%=item.ID %>,this)">Delete</button>
+                            <a class="btn btn-info" onclick="OpenModal(<%=item.ID %>,this)"><i class="fa fa-edit" style="font-size: 15px; right: 10px"></i></a>
+                            <button class="btn" onclick="Delete(<%=item.ID %>,this)"><i class="fa fa-trash" style="font-size: 15px"></i></button>
+                              
+                       
+                            
                         </td>
                     </tr>
                     <%} %>
