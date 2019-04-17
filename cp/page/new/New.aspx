@@ -30,7 +30,7 @@
                     <%=new2.NewsContent%>
                 </td>
                 <td class="text-center">
-                    <a class="btn btn-info" href="cp-edit-product-<%=new2.NewsID %>">
+                    <a class="btn btn-info" href="/cp-edit-new-<%=new2.NewsID%>" >
                         <i class="fa fa-edit" style="font-size: 15px"></i>
                     </a>
                     <button class="btn" onclick="Delete(this,<%=new2.NewsID%>)">
@@ -44,6 +44,7 @@
 
 
     <script>
+    
          function Delete(input, id) {
             alertify.confirm("Are you sure Delete", function () {
                 $(input).prop("disabled", true);
