@@ -101,6 +101,7 @@
                 $("#tblReward").html(data);
             });
         }
+        //
         /* Search reward */
         document.getElementById('txtSearch').onkeydown = function (event) {
             if (event.keyCode == 13) {
