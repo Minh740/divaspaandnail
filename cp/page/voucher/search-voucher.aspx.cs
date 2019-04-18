@@ -17,7 +17,6 @@ public partial class cp_page_voucher_search_voucher : System.Web.UI.Page
         VoucherManager r = new VoucherManager();
         user = UM.GetUserByUserPhone(phone);
         userid = user.UserId;
-
         result = r.GetListVoucherByUserId(userid);
 
     }

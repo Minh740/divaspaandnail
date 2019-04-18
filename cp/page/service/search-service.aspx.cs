@@ -17,8 +17,8 @@ public partial class cp_page_service_search_service : System.Web.UI.Page
         ServicesManager r = new ServicesManager();
         service = SM.GetServiceByServiceName(name);
         serviceid = service.ID;
-
         result = r.GetListServiceBySerciceId(serviceid);
+
 
     }
 }

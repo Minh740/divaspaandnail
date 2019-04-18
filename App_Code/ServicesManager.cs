@@ -26,7 +26,7 @@ public class ServicesManager
 
     public List<ServicesTBx> GetList()
     {
-        return db.ServicesTBxes.Where(u => u.Status != -1).OrderBy(u => u.Order).ToList();
+        return db.ServicesTBxes.Where(u => u.Status != -1).OrderBy(u => u.ID).ToList();
     }
     // get serviced by name
     public ServicesTBx GetServiceByServiceName(string name)
