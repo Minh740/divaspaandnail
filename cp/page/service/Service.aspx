@@ -29,6 +29,7 @@
                 <th class="text-center">Order</th>
                 <th class="text-center">Price</th>
                 <th class="text-center">Category</th>
+                <th class="text-center">Status</th>
                 <th colspan="2" class="text-center">Action</th>
             </tr>
             <%for (int i = listService.Count - 1 ; i > -1; i-- )
@@ -40,6 +41,7 @@
                 <td><%=listService[i].Order%></td>
                 <td><%=listService[i].Price%></td>
                 <td><%=listService[i].CategoryTBx.Name%></td>
+                <td><%=listService[i].Status%></td>
                 <td class="text-center">
                     <a class="btn btn-info" href="/cp-edit-service-<%=listService[i].ID %>">
                         <i class="fa fa-edit" style="font-size: 15px; right: 10px" aria-disabled="true"></i>

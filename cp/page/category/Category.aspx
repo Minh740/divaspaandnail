@@ -19,6 +19,7 @@
                 <th class="text-center">Name</th>
                 <th class="text-center">Order</th>
                 <th class="text-center">Parent</th>
+                <th class="text-center">Status</th>
                 
                 <th colspan="2" class="text-center">Action</th>
             </tr>
@@ -35,7 +36,9 @@
                 <%}
                     else
                     { %>
+                
                 <td></td>
+                <td><%=listCategory[i].Status%></td>
               
                 <%} %>
                 <td class="text-center">
