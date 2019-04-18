@@ -30,6 +30,6 @@ public class CategoryManager
 
     public List<CategoryTBx> GetList()
     {
-        return db.CategoryTBxes.Where(u => u.Status == 1).OrderBy(u=>u.Order).ToList();
+        return db.CategoryTBxes.Where(u => u.Status == 1).OrderBy(u=>u.ID).ToList();
     }
 }
