@@ -46,9 +46,9 @@
                     <a class="btn btn-info" href="/cp-edit-service-<%=listService[i].ID %>">
                         <i class="fa fa-edit" style="font-size: 15px; right: 10px" aria-disabled="true"></i>
                     </a>
-                    <button class="btn" onclick="Delete(this,<%=listService[i].ID%>)" value="disable">
+                    <a class="btn" onclick="Delete(this,<%=listService[i].ID%>)" value="disable">
                         <i class="fa fa-trash" style="font-size: 15px"></i>
-                    </button>
+                    </a>
                 </td>
             </tr>
             <%} %>
@@ -97,7 +97,7 @@
             $.post("/cp/page/service/search-service.aspx", {
                 name: name,
             }, function (data) {
-
+               
                 $("#tblReward").html(data);
             });
         }

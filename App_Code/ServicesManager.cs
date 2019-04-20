@@ -29,10 +29,18 @@ public class ServicesManager
         return db.ServicesTBxes.Where(u => u.Status != -1).OrderBy(u => u.ID).ToList();
     }
     // get serviced by name
-    public ServicesTBx GetServiceByServiceName(string name)
+    //public ServicesTBx GetServiceByServiceName(string name)
+    //{
+
+    //    return db.ServicesTBxes.Where(u => u.Name.Contains(name) && u.Status == 1).FirstOrDefault();
+    //}
+
+    public List<ServicesTBx> GetServiceByServiceName(string name)
     {
-        return db.ServicesTBxes.Where(u => u.Name == name && u.Status == 1).FirstOrDefault();
+
+        return db.ServicesTBxes.Where(u => u.Name.Contains(name) && u.Status == 1).ToList();
     }
+
     //
     public List<ServicesTBx> GetListServiceBySerciceId(int id)
     {

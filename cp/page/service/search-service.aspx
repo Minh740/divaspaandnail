@@ -1,5 +1,5 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="search-service.aspx.cs" Inherits="cp_page_service_search_service" %>
-<table class="table">
+<table class="table table-bordered">
         <tbody>
             <tr>
                 <th class="text-center">ID</th>
@@ -29,16 +29,15 @@
             <td><%=i.Name %></td>
             <td><%=i.Order %></td>
             <td><%=i.Price %></td>
-           <td><%=i.CategoryID%></td>
+           <td><%=i.CategoryTBx.Name%></td>
          
             <td>
-
-                        <a class="btn btn-info" onclick="Edit(<%=i.ID%>)">
-                            <i class="fa fa-edit" style="font-size: 15px; right: 10px"></i>
-                        </a>
-                         <a class="btn" onclick="Delete(<%=i.ID%>)">
-                             <i class="fa fa-trash" style="font-size: 15px"></i>
-                         </a>
+                <a class="btn btn-info" href="/cp-edit-service-<%=i.ID %>">
+                        <i class="fa fa-edit" style="font-size: 15px; right: 10px" aria-disabled="true"></i>
+                    </a>
+                    <a class="btn" onclick="Delete(this,<%=i.ID%>)" value="disable">
+                        <i class="fa fa-trash" style="font-size: 15px"></i>
+                    </a>
                 <%--<button class="btn btn-primary" onclick="Edit(<%=i.RewardID%>)">Edit</button>--%>
             </td>
         </tr>
