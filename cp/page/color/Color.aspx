@@ -1,10 +1,13 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/cp/MasterPage.master" AutoEventWireup="true" CodeFile="Color.aspx.cs" Inherits="cp_page_color_Color" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
-     <script src="/cp/lib/color-picker/jquery.minicolors.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js" ></script>
+    <link href="/cp/page/service/StyleSheet.css" rel="stylesheet" />
+     <script src="/cp/lib/color-picker/jquery.minicolors.js" ></script>
     <link href="/cp/lib/color-picker/jquery.minicolors.css" rel="stylesheet" />
     <script src="/cp/page/service/bootstrap-table-pagination.js"></script>
     <script src="/cp/page/service/pagination.js"></script>
+    
 
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
@@ -49,7 +52,7 @@
         </div>
         <div id="tblReward">
         <div class="table-responsive">
-            <table class="table table-bordered">
+            <table class="table table-bordered paginated">
                 <thead>
                     <tr>
                         <th>ID</th>
@@ -122,35 +125,40 @@
     </div>
 
 
-
+         
     <script>
+
+
+
+
         function OpenModal(type, input) {
+            jQuery.noConflict();
             $("#mdInput").modal();
             if (type == 0) {
-                $("#btn-save").attr("onclick", "Add()");
-                $("#txtCode").minicolors("value", "#ffffff");
+                jQuery("#btn-save").attr("onclick", "Add()");
+                jQuery("#txtCode").minicolors("value", "#ffffff");
             }
             else {
                 $("#btn-save").attr("onclick", "Edit(" + type + ")");
-                $("#txtName").val($(input).parent().parent().find("td").eq(1).text());
-                $("#txtBrand").val($(input).parent().parent().find("td").eq(2).data("id")).change();
-                $("#txtCode").minicolors("value", $(input).parent().parent().find("td").eq(3).text());
+                $("#txtName").val(jQuery(input).parent().parent().find("td").eq(1).text());
+                $("#txtBrand").val(jQuery(input).parent().parent().find("td").eq(2).data("id")).change();
+                $("#txtCode").minicolors("value", jQuery(input).parent().parent().find("td").eq(3).text());
             }
 
         }
 
         function Add() {
-            console.log($("#txtCode").val());
-            $("#btn-save").attr("disabled", "disabled");
-            if ($("#txtName").val().length == 0) {
+            console.log(jQuery("#txtCode").val());
+            jQuery("#btn-save").attr("disabled", "disabled");
+            if (jQuery("#txtName").val().length == 0) {
                 alert("Please enter brand name");
-            } else if ($("#txtCode").val().length == 0) {
+            } else if (jQuery("#txtCode").val().length == 0) {
                 alert("Please enter color");
             } else {
-                $.post("/cp/do/color/add.ashx", {
-                    name: $("#txtName").val(),
-                    brandID: $("#txtBrand").val(),
-                    hex: $("#txtCode").val()
+                jQuery.post("/cp/do/color/add.ashx", {
+                    name: jQuery("#txtName").val(),
+                    brandID: jQuery("#txtBrand").val(),
+                    hex: jQuery("#txtCode").val()
                 }, data => {
                     data = JSON.parse(data);
                     if (data.success == -1) {
@@ -165,13 +173,13 @@
         }
 
         function Edit(id) {
-            $("#btn-save").attr("disabled", "disabled");
-            if ($("#txtName").val().length > 0) {
-                $.post("/cp/do/color/edit.ashx", {
+            jQuery("#btn-save").attr("disabled", "disabled");
+            if (jQuery("#txtName").val().length > 0) {
+                jQuery.post("/cp/do/color/edit.ashx", {
                     id: id,
-                    name: $("#txtName").val(),
-                    brandID: $("#txtBrand").val(),
-                    hex: $("#txtCode").val()
+                    name: jQuery("#txtName").val(),
+                    brandID: jQuery("#txtBrand").val(),
+                    hex: jQuery("#txtCode").val()
 
                 }, data => {
                     data = JSON.parse(data);
@@ -251,5 +259,11 @@
                 $("#tblReward").load(" #tblReward");
             }
         }
+
+
+      
+
+
     </script>
+
 </asp:Content>

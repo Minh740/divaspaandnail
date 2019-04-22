@@ -1,4 +1,7 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="search-color.aspx.cs" Inherits="cp_page_color_search_color" %>
+<link href="/cp/page/service/StyleSheet.css" rel="stylesheet" />
+<script src="/cp/page/service/bootstrap-table-pagination.js"></script>
+<script src="/cp/page/service/pagination.js"></script>
 <table class="table table-bordered">
                 <thead>
                     <tr>
@@ -9,7 +12,7 @@
                         <th>Action</th>
                     </tr>
                 </thead>
-                <tbody>
+                <tbody id="developers">
                     <%foreach (var item in result)
                         {%>
                     <tr>
@@ -28,3 +31,6 @@
                     <%} %>
                 </tbody>
             </table>
+<div class="col-md-12 text-center">
+	<ul class="pagination pagination-lg pager" id="developer_page"></ul>
+</div>
