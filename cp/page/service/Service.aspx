@@ -1,6 +1,11 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/cp/MasterPage.master" AutoEventWireup="true" CodeFile="Service.aspx.cs" Inherits="cp_page_service_Service" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
+    <link href="/cp/page/service/StyleSheet.css" rel="stylesheet" />
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script src="/cp/page/service/bootstrap-table-pagination.js"></script>
+    <script src="/cp/page/service/pagination.js"></script>
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
@@ -21,8 +26,8 @@
     </div>
     <p></p>
         <div id="tblReward">
-    <table class="table table-bordered">
-        <tbody>
+    <table class="table table-bordered paginated">
+        <tbody id="developers">
             <tr>
                 <th class="text-center">ID</th>
                 <th class="text-center">Name</th>
@@ -54,6 +59,9 @@
             <%} %>
         </tbody>
     </table>
+            <div class="col-md-12 text-center">
+			    <ul class="pagination pagination-lg pager" id="developer_page"></ul>
+		    </div>
             </div>
         </div>
     <script>
@@ -112,6 +120,7 @@
         }
     </script>
 
+   
 
 </asp:Content>
 

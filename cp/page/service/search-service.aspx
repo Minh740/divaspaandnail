@@ -1,6 +1,12 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="search-service.aspx.cs" Inherits="cp_page_service_search_service" %>
+
+<link href="/cp/page/service/StyleSheet.css" rel="stylesheet" />
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script src="/cp/page/service/bootstrap-table-pagination.js"></script>
+    <script src="/cp/page/service/pagination.js"></script>
 <table class="table table-bordered">
-        <tbody>
+        <tbody id="developers">
             <tr>
                 <th class="text-center">ID</th>
                 <th class="text-center">Name</th>
@@ -45,3 +51,6 @@
             }%>
     </tbody>
 </table>
+<div class="col-md-12 text-center">
+			    <ul class="pagination pagination-lg pager" id="developer_page"></ul>
+</div>
