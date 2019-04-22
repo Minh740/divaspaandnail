@@ -23,7 +23,7 @@
         <div class="panel-heading">
         <input id="txtSearch" style="width: 500px; margin-left: 200px; float: left; overflow: hidden;" type="text" class="form-control" placeholder="Input name service and press Enter" />
         <button style="" class="btn btn-search btn-success" onclick="SearchReward()">Search</button>
-    </div>
+        </div>
     <p></p>
         <div id="tblReward">
     <table class="table table-bordered paginated">

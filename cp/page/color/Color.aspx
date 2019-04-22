@@ -3,6 +3,9 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
      <script src="/cp/lib/color-picker/jquery.minicolors.js"></script>
     <link href="/cp/lib/color-picker/jquery.minicolors.css" rel="stylesheet" />
+    <script src="/cp/page/service/bootstrap-table-pagination.js"></script>
+    <script src="/cp/page/service/pagination.js"></script>
+
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
 <%--    <div class="page-header">
@@ -35,11 +38,16 @@
     <p></p>
     <div class="panel panel-flat">
         <div class="panel-heading">
+        <input id="txtSearch" style="width: 500px; margin-left: 200px; float: left; overflow: hidden;" type="text" class="form-control" placeholder="Input name service and press Enter" />
+        <button style="" class="btn btn-search btn-success" onclick="SearchReward()">Search</button>
+        </div>
+        <p></p>
+        <div class="panel-heading">
             <h7 class="panel-title">Color (<%=list.Count %>)</h7>
             <div class="heading-elements">
             </div>
         </div>
-
+        <div id="tblReward">
         <div class="table-responsive">
             <table class="table table-bordered">
                 <thead>
@@ -51,7 +59,7 @@
                         <th>Action</th>
                     </tr>
                 </thead>
-                <tbody>
+                <tbody id="developers">
                     <%foreach (var item in list)
                         {%>
                     <tr>
@@ -70,6 +78,9 @@
                     <%} %>
                 </tbody>
             </table>
+            <div class="col-md-12 text-center">
+			    <ul class="pagination pagination-lg pager" id="developer_page"></ul>
+		    </div>
         </div>
     </div>
 
@@ -220,5 +231,25 @@
                 theme: 'bootstrap'
             });
         })
+
+
+        function SearchReward() {
+            var name = $("#txtSearch").val();
+            $.post("/cp/page/color/search-color.aspx", {
+                name: name,
+            }, function (data) {
+               
+                $("#tblReward").html(data);
+            });
+        }
+        //
+        /* Search reward */
+        document.getElementById('txtSearch').onkeydown = function (event) {
+            if (event.keyCode == 13) {
+                SearchReward();
+            } else {
+                $("#tblReward").load(" #tblReward");
+            }
+        }
     </script>
 </asp:Content>

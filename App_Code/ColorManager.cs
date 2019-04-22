@@ -37,4 +37,10 @@ public class ColorManager
     {
         return DB.ColorTBxes.Where(e => e.BrandID == brandID && e.Status == 1).ToList();
     }
+
+    public List<ColorTBx> GetColorByColorName(string name)
+    {
+
+        return DB.ColorTBxes.Where(u => u.Name.Contains(name) && u.Status == 1).ToList();
+    }
 }

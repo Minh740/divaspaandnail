@@ -52,5 +52,5 @@
     </tbody>
 </table>
 <div class="col-md-12 text-center">
-			    <ul class="pagination pagination-lg pager" id="developer_page"></ul>
+	<ul class="pagination pagination-lg pager" id="developer_page"></ul>
 </div>
