@@ -17,8 +17,8 @@
         <!-- Table -->
         <div class="panel panel-flat">
             <div class="panel-heading">
-                <input id="txtSearch" style="width: 500px; margin-left: 200px; float: left; overflow: hidden;" type="text" class="form-control" placeholder="Input phonenumber and press Enter" />
-                <button style="" class="btn btn-search btn-success" onclick="SearchReward()">Search</button>
+                <%--<input id="txtSearch" style="width: 500px; margin-left: 200px; float: left; overflow: hidden;" type="text" class="form-control" placeholder="Input phonenumber and press Enter" />
+                <button style="" class="btn btn-search btn-success" onclick="SearchReward()">Search</button>--%>
 
                 <h5 class="panel-title" style="width: 300px"><span class="icon-medal2"></span>Voucher (<%=list.Count %>)</h5>
                 <div class="heading-elements">
@@ -57,20 +57,13 @@
                             </td>
                             <td><%=i.VoucherAddedDate %></td>
                             <td>
-                                <div class="dropdown">
-                                    <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">
-                                        Action
-                                            <span class="caret"></span>
-                                    </button>
+                           
+                            <a class="btn btn-info" onclick="Edit(<%=i.VoucherID%>)"><i class="fas fa-edit"></i></a>
+                                       
+                            <a class="btn" onclick="Delete(<%=i.VoucherID%>)"><i class="fas fa-trash"></i></a>
+                                    
 
-                                    <ul class="dropdown-menu" style="padding: 5px">
-                                        <li style="float: left; margin-left: 5px">
-                                            <button class="btn btn-success" onclick="Edit(<%=i.VoucherID%>)">Edit</button></li>
-                                        <li style="float: left; margin-left: 5px">
-                                            <button class="btn btn-danger" onclick="Delete(<%=i.VoucherID%>)">Delete</button></li>
-                                    </ul>
-
-                                </div>
+                               
                             </td>
                         </tr>
                         <% } %>
@@ -385,16 +378,36 @@
                 keyboard: false
             });
         }
-        function Delete(id) {
-            var r = confirm("Are you want to delete ?");
-            if (r == true) {
-                $.get("/cp/do/delete-voucher.aspx", { id: id, status: -1 }, function (data) {
-                    if (data == -1) {
-                        $('#model_' + id).remove();
-                        location.href = "Voucher.aspx";
+        function Delete(input,id) {
+            alertify.confirm("Are you sure Delete", function () {
+                $(input).prop("disabled", true);
+                ShowLoading();
+                $.ajax({
+                    url: "/cp/do/voucher/delete-voucher.aspx",
+                    method: "post",
+                    data: {
+                        id: id,
+                    },
+                    success: function (data) {
+                        data = JSON.parse(data);
+                        if (data.success == -1) {
+                            alertify.error("Error. Please try again");
+                            console.log(data);
+                        }
+                        else {
+                            location.href = "/cp-brand";
+                        }
+                        $(input).prop("disabled", false);
+                        HideLoading();
+                    },
+                    error: function (error) {
+                        alertify.error("Error. Please try again.");
+                        console.log(error);
+                        $(input).prop("disabled", false);
+                        HideLoading();
                     }
                 })
-            }
+            });
         }
 
 

@@ -57,14 +57,16 @@ public partial class cp_do_voucher_add_new_voucher : System.Web.UI.Page
         //decimal credit = (Decimal)usercard.CurrentCredit;
         //----------- ADD VOUCHER -----------------//
 
+
+
         UserManager um = new UserManager();
         UsersTbx user = um.GetUserByID(UserId);
-        int totalReward = Convert.ToInt32(user.TotalReward);
+        //int totalReward = Convert.ToInt32(user.TotalReward);
         VoucherManager vc = new VoucherManager();
         VouchersTBx voucher = new VouchersTBx();
         try
         {
-            if (totalReward >= 100)
+            if (user.TotalReward >= 100)
             {
 
                 if (VoucherLevel == "VoucherLevel1")
@@ -74,7 +76,7 @@ public partial class cp_do_voucher_add_new_voucher : System.Web.UI.Page
                     voucherMinCost = 5;
                     voucherDefaultCost = 5;
                     //credit -= 200;
-                    totalReward -= 200;
+                    user.TotalReward -= 200;
                     flag = true;
                 }
                 if (VoucherLevel == "VoucherLevle2")
@@ -83,10 +85,10 @@ public partial class cp_do_voucher_add_new_voucher : System.Web.UI.Page
                     des = "2st level voucher, price for $10";
                     voucherMinCost = 10;
                     voucherDefaultCost = 10;
-                    if (totalReward >= 300)
+                    if (user.TotalReward >= 300)
                     {
                         //credit -= 300;
-                        totalReward -= 300;
+                        user.TotalReward -= 300;
                         flag = true;
                     }
                     else
@@ -100,10 +102,10 @@ public partial class cp_do_voucher_add_new_voucher : System.Web.UI.Page
                     des = "3st level voucher, price for $15";
                     voucherMinCost = 15;
                     voucherDefaultCost = 15;
-                    if (totalReward >= 400)
+                    if (user.TotalReward >= 400)
                     {
-                        totalReward -= 400;
-                        totalReward -= 400;
+                        user.TotalReward -= 400;
+                        user.TotalReward -= 400;
                         flag = true;
                     }
                     else
@@ -124,13 +126,15 @@ public partial class cp_do_voucher_add_new_voucher : System.Web.UI.Page
 
                     voucher.VoucherCode = vouchercode;//UTIL.Encrypt(vouchercode, true);
                     voucher.UserId = UserId;
-
+                    voucher.RedeemDate = null;
                     // UserCard update
                     //usercard.CurrentCredit = credit;
                     // User update 
-                    user.TotalReward = totalReward;
+                    user.TotalReward = user.TotalReward;
+
                     //----------------------------------------------//
                     vc.AddVoucher(voucher);
+
                     vc.Save();
                     //uc.Save();
                     um.Save();

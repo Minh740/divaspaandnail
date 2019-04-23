@@ -44,4 +44,10 @@ public class VoucherManager
     {
         return db.VouchersTBxes.Where(u => u.VoucherStatus != -1 && u.VoucherCode == code && u.UserId == Convert.ToInt32(userid)).FirstOrDefault();
     }
+
+    public List<VouchersTBx> GetVoucherByPhone(string phone)
+    {
+
+        return db.VouchersTBxes.Where(u => u.UsersTbx.PhoneNumber.Contains(phone)).ToList();
+    }
 }

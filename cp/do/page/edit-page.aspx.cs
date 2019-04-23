@@ -13,24 +13,24 @@ public partial class do_edit_page : System.Web.UI.Page
         int id = Convert.ToInt32(Request["id"]);
         string name = Request["name"];
         string title = Request["title"];
-        string desc = Request["desc"];
+        //string desc = Request["desc"];
         string pagecontent = Request["pagecontent"];
-        string grounpcode = Request["grounpcode"];
+        //string grounpcode = Request["grounpcode"];
         PageManager PM = new PageManager();
         editpage = PM.GetByID(id);
-        if (editpage.Id==0)
+        if (editpage.ID==0)
         {
             Response.Write("Page doesn't exist. Please try again.");
             return;
         }
         else
         {
-            editpage.Id = id;
+            editpage.ID = id;
             editpage.Name = name;
             editpage.Title = title;
             editpage.PageContent = pagecontent;
-            editpage.Description = desc;
-            editpage.GroupCode = grounpcode;
+            //editpage.Description = desc;
+            //editpage.GroupCode = grounpcode;
             Response.Write(1);
             PM.Save();
         }

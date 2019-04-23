@@ -11,7 +11,8 @@ public partial class api_get_news : System.Web.UI.Page
     protected void Page_Load(object sender, EventArgs e)
     {
         Response.AppendHeader("Access-Control-Allow-Origin", "*");
-        NewsManager NM = new NewsManager();
+        NewManager NM = new NewManager();
         list = NM.GetList().Take(1).ToList();
     }
 }
+

@@ -6,7 +6,7 @@
       { %>
     
         <div class="item <%=i==0? "active":"" %>">
-            <img src="http://reward.tuscript.com/upload/slider/slider_<%=listslide[i].SliderID %>.jpg" />
+            <img src="http://reward.tuscript.com/upload/slider/slider_"+<%=listslide[i].ID %>+".jpg" />
         </div>
     
    <%} %>

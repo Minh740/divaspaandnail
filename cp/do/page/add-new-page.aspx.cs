@@ -20,9 +20,9 @@ public partial class do_add_new_page : System.Web.UI.Page
         PageTBx add = new PageTBx();
         add.Name = name;
         add.Title = title;
-        add.Description = desc;
+        //add.Description = desc;
         add.PageContent = pagecontent;
-        add.GroupCode = grounpcode;
+        //add.GroupCode = grounpcode;
         add.Status = 1;
         PM.AddNew(add);
         Response.Write(1);
