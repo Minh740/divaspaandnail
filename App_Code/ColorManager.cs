@@ -43,4 +43,11 @@ public class ColorManager
 
         return DB.ColorTBxes.Where(u => u.Name.Contains(name) && u.Status == 1).ToList();
     }
+
+    public List<ColorTBx> getbrandbybrandname(int id)
+    {
+
+        return DB.ColorTBxes.Where(u => u.BrandID == id && u.Status == 1).ToList();
+    }
+
 }

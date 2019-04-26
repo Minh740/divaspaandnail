@@ -34,4 +34,10 @@ public class BrandManager
     {
         return DB.BrandTBxes.Where(e => e.ID == id).FirstOrDefault();
     }
+
+    public List<BrandTBx> getbrandbybrandname(string name)
+    {
+
+        return DB.BrandTBxes.Where(u => u.Name == name && u.Status == 1).ToList();
+    }
 }

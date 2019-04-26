@@ -28,7 +28,7 @@
             </div>
 
             <div class="table-responsive" id="tblReward">
-                <table class="table">
+                <table class="table table-bordered">
                     <thead>
                         <tr>
                             <th>GiftCardID</th>
@@ -66,7 +66,7 @@
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    
                     <h4 class="modal-title" id="m-title">Edit GiftCard</h4>
                 </div>
                 <div class="modal-body">
@@ -379,18 +379,48 @@
                 keyboard: false
             });
         }
-        function Delete(id) {
-            var r = confirm("Are you sure to Delete this giftcard ?");
-            if (r == true) {
-                $.get("/cp/do/giftcard/delete-giftcard.aspx", { id: id, status: -1 }, function (data) {
-                    if (data == -1) {
-                        $('#model_' + id).remove();
-                        location.reload();
+        //function Delete(id) {
+        //    var r = confirm("Are you sure to Delete this giftcard ?");
+        //    if (r == true) {
+        //        $.get("/cp/do/giftcard/delete-giftcard.aspx", { id: id, status: -1 }, function (data) {
+        //            if (data == -1) {
+        //                $('#model_' + id).remove();
+        //                location.reload();
+        //            }
+        //        })
+        //    }
+        //}
+        function Delete(input,id) {
+            alertify.confirm("Are you sure Delete", function () {
+                $(input).prop("disabled", true);
+                ShowLoading();
+                $.ajax({
+                    url: "/cp/do/giftcard/delete-giftcard.aspx",
+                    method: "post",
+                    data: {
+                        id: id,
+                    },
+                    success: function (data) {
+                        data = JSON.parse(data);
+                        if (data.success == -1) {
+                            alertify.error("Error. Please try again");
+                            console.log(data);
+                        }
+                        else {
+                            location.href = "/cp-giftcard";
+                        }
+                        $(input).prop("disabled", false);
+                        HideLoading();
+                    },
+                    error: function (error) {
+                        alertify.error("Error. Please try again.");
+                        console.log(error);
+                        $(input).prop("disabled", false);
+                        HideLoading();
                     }
                 })
-            }
+            });
         }
-
 
         function openModal(id) {
 

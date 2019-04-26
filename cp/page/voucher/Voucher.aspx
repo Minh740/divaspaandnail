@@ -395,7 +395,7 @@
                             console.log(data);
                         }
                         else {
-                            location.href = "/cp-brand";
+                            location.href = "/cp-voucher";
                         }
                         $(input).prop("disabled", false);
                         HideLoading();

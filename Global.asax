@@ -79,6 +79,9 @@
 
         // voucher
         rout.MapPageRoute("", "cp-voucher", "~/cp/page/voucher/Voucher.aspx");
+
+        // giftcard
+        rout.MapPageRoute("", "cp-giftcard", "~/cp/page/giftcard/Giftcard.aspx");
     }
 
     void Application_Start(object sender, EventArgs e)

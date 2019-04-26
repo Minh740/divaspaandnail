@@ -7,30 +7,9 @@
     <link href="/cp/lib/color-picker/jquery.minicolors.css" rel="stylesheet" />
     <script src="/cp/page/service/bootstrap-table-pagination.js"></script>
     <script src="/cp/page/service/pagination.js"></script>
-    
-
+    <link href="StyleSheet.css" rel="stylesheet" />
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
-<%--    <div class="page-header">
-        <div class="page-header-content">
-            <div class="page-title">
-                <h4><i class="icon-arrow-left52 position-left"></i><span class="text-semibold">Slider</span> Management</h4>
-            </div>
-
-            <div class="heading-elements">
-                <a id="btn-add" onclick="OpenModal(0,this)" class="btn btn-labeled btn-labeled-right bg-blue heading-btn">Add New <b><i class="icon-menu7"></i></b></a>
-            </div>
-        </div>
-
-        <div class="breadcrumb-line">
-            <ul class="breadcrumb">
-                <li><a href="/"><i class="icon-home2 position-left"></i>Home</a></li>
-                <li><a href="/cp/Color.aspx"><i class="icon-blog position-left"></i>Color Management</a></li>
-            </ul>
-
-
-        </div>
-    </div>--%>
       <ol class="breadcrumb">
         <li class="breadcrumb-item">
             <a href="#">Dashboard</a>
@@ -43,7 +22,28 @@
         <div class="panel-heading">
         <input id="txtSearch" style="width: 500px; margin-left: 200px; float: left; overflow: hidden;" type="text" class="form-control" placeholder="Input name color and press Enter" />
         <button style="" class="btn btn-search btn-success" onclick="SearchReward()">Search</button>
+            <div style="display:flex;margin-top: 1%;">
+            <p style="margin-right: 15px;margin-top: 9px;">Filter By Brand</p>
+            <div class="dropdown">
+                  <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown"><i class="fas fa-filter"></i>
+                  <span class="caret"></span></button>
+                <div id="brand">
+                      <ul class="dropdown-menu">
+                          
+                          <%foreach (var itemm in listBrand)
+                                {%>
+                        <li style="margin-bottom: 5px;margin-left: 15px;">
+                            <a onclick="SearchReward1(<%=itemm.ID%>)"><%=itemm.Name %></a>
+                        </li>
+                          <%} %>
+                      </ul>
+                  
+                </div>
+            </div>
         </div>
+        </div>
+        </div>
+
         <p></p>
         <div class="panel-heading">
             <h7 class="panel-title">Color (<%=list.Count %>)</h7>
@@ -66,6 +66,7 @@
                     <%foreach (var item in list)
                         {%>
                     <tr>
+                        
                         <td><%=item.ID %></td>
                         <td><%=item.Name %></td>
                         <td data-id="<%=item.BrandID %>"><%=BM.GetByID((int)item.BrandID).Name %></td>
@@ -255,6 +256,26 @@
         document.getElementById('txtSearch').onkeydown = function (event) {
             if (event.keyCode == 13) {
                 SearchReward();
+            } else {
+                $("#tblReward").load(" #tblReward");
+            }
+        }
+
+
+        function SearchReward1(id) {
+            //var name = $("#brand").val();
+            $.post("/cp/page/color/search-brand.aspx", {
+                id: id,
+            }, function (data) {
+               
+                $("#tblReward").html(data);
+            });
+        }
+        //
+        /* Search by brand */
+        document.getElementById('brand').onkeydown = function (event) {
+            if (event.keyCode == 13) {
+                SearchReward1();
             } else {
                 $("#tblReward").load(" #tblReward");
             }
