@@ -22,10 +22,10 @@
         <div class="panel-heading">
         <input id="txtSearch" style="width: 500px; margin-left: 200px; float: left; overflow: hidden;" type="text" class="form-control" placeholder="Input name color and press Enter" />
         <button style="" class="btn btn-search btn-success" onclick="SearchReward()">Search</button>
-            <div style="display:flex;margin-top: 1%;">
+            <div class="filter">
             <p style="margin-right: 15px;margin-top: 9px;">Filter By Brand</p>
             <div class="dropdown">
-                  <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown"><i class="fas fa-filter"></i>
+                  <button class="btn btn-success dropdown-toggle" type="button" data-toggle="dropdown"><i class="fas fa-filter"></i>
                   <span class="caret"></span></button>
                 <div id="brand">
                       <ul class="dropdown-menu">
@@ -46,7 +46,7 @@
 
         <p></p>
         <div class="panel-heading">
-            <h7 class="panel-title">Color (<%=list.Count %>)</h7>
+            <%--<h7 class="panel-title">Color (<%=list.Count %>)</h7>--%>
             <div class="heading-elements">
             </div>
         </div>

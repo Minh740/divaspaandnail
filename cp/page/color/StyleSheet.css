@@ -1,3 +1,9 @@
 ﻿.dropdown-menu:hover{
     cursor:pointer;
 }
+.filter {
+    display: flex;
+    margin-top: -3.5%;
+    width: 16%;
+    margin-left: 75%;
+}
